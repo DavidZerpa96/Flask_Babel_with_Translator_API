@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -21,15 +21,16 @@
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
                 <div class="container px-5">
-                    <a class="navbar-brand" href="{{ url_for('home', lang=request.args.get('lang', 'es')) }}"><span class="fw-bolder text-primary">{{ _('David Zerpa') }}</span></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ _('Toggle navigation') }}"><span class="navbar-toggler-icon"></span></button>
+                    <a class="navbar-brand" href="{{ url_for('home') }}"><span class="fw-bolder text-primary">{{ _('David Zerpa') }}</span></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Abrir menú de navegación"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mt-2 mb-lg-0 small fw-bolder">
-                            <li class="nav-item"><a class="nav-link" href="{{ url_for('home', lang=request.args.get('lang', 'es')) }}">{{ _('INICIO') }}</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ url_for('services', lang=request.args.get('lang', 'es')) }}">{{ _('SERVICIOS') }}</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ url_for('resume', lang=request.args.get('lang', 'en')) }}">{{ _('CURRÍCULUM') }}</a></li>
-                            <li class="nav-item"><a class="nav-link nav-item-selected" href="{{ url_for('projects', lang=request.args.get('lang', 'es')) }}">{{ _('PROYECTOS') }}</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ url_for('contact', lang=request.args.get('lang', 'es')) }}">{{ _('CONTACTO') }}</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">{{ _('INICIO') }}</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('work') }}">EXPERIENCIA</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('services') }}">{{ _('SERVICIOS') }}</a></li>
+                            <li class="nav-item"><a class="nav-link nav-item-selected" href="{{ url_for('projects') }}">{{ _('PROYECTOS') }}</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('resume') }}">{{ _('CURRÍCULUM') }}</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">{{ _('CONTACTO') }}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -183,7 +184,7 @@
         <div class="container text-center">
             <h2 class="display-4 fw-bolder">{{ _('Convierte tus datos en tu mejor aliado') }}</h2>
             <p class="text-center">{{ _('¿Listo para transformar tu negocio? Contáctame para crear soluciones personalizadas que impulsen tu negocio.') }}</p>
-            <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="{{ url_for('contact', lang=request.args.get('lang', 'es')) }}">{{ _('Contáctame') }}</a>
+            <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="{{ url_for('contact') }}">{{ _('Contáctame') }}</a>
         </div>
     </section>
     <!-- Footer -->
@@ -206,7 +207,7 @@
                     <a class="icons text-primary text-decoration-none me-3 icon-hover" href="https://github.com/DavidZerpa96" target="_blank" rel="noopener noreferrer" style="font-size: 2rem;">
                         <i class="bi bi-github"></i>
                     </a>
-                    <a class="icons text-primary text-decoration-none icon-hover" href="{{ url_for('contact', lang=request.args.get('lang', 'en')) }}" rel="noopener noreferrer" style="font-size: 2rem;">
+                    <a class="icons text-primary text-decoration-none icon-hover" href="{{ url_for('contact') }}" rel="noopener noreferrer" style="font-size: 2rem;">
                         <i class="bi bi-envelope"></i>
                     </a>
                 </div>

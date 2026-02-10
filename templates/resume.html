@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="{{ _('Currículum de David Zerpa (Analytics Engineer). Experiencia en data pipelines, BigQuery, MySQL, Power BI y automatización con Python.') }}">
+        <meta name="keywords" content="Currículum, David Zerpa, Analytics Engineer, data engineering, Power BI, BigQuery, Python, SQL, automatización, ETL, DAX, MySQL">
+        <meta name="author" content="David Zerpa" />
+        <title>{{ _('Resume') }}</title>
+        <!-- Custom Google font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/Icon.ico') }}" />
+    </head>
+    <body class="d-flex flex-column h-100 bg-light ">
+        <main class="flex-shrink-0 ">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="{{ url_for('home', lang=request.args.get('lang', 'en')) }}">
+                        <span class="fw-bolder text-primary">{{ _('David Zerpa') }}</span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ _('Toggle navigation') }}">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mt-2 mb-lg-0 small fw-bolder">
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('home', lang=request.args.get('lang', 'en')) }}">{{ _('INICIO') }}</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('services', lang=request.args.get('lang', 'en')) }}">{{_('SERVICIOS')}}</a></li>
+                            <li class="nav-item"><a class="nav-link nav-item-selected" href="{{ url_for('resume', lang=request.args.get('lang', 'en')) }}">{{ _('CURRÍCULUM') }}</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('projects', lang=request.args.get('lang', 'en')) }}">{{ _('PROYECTOS') }}</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('contact', lang=request.args.get('lang', 'en')) }}">{{ _('CONTACTO') }}</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Page Content-->
+            <div class="container px-3 my-3">
+                <div class="text-center mb-3 ">
+                    <h1 class="display-3 fw-bolder mb-0" ><span class="text-gradient d-inline">{{ _('Currículum') }}</span></h1>
+                </div>
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-11 col-xl-9 col-xxl-8">
+                        <!-- Experience Section-->
+                        <section>
+                            <div class="text-center">
+                            <button type="button" class="btn btn-primary px-4 py-3 mt-2 mb-4" data-bs-toggle="modal" data-bs-target="#resumeModal">
+                                <div class="d-inline bi bi-download me-2 text-end"></div>
+                                {{ _('Descargar Currículum') }}
+                            </button>
+                            </div>
+                            <h2 class="text-primary fw-bolder mb-4">{{ _('Experiencia') }}</h2>
+                            <!-- Experience Card 1 -->
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <!-- Información de la tarjeta -->
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                                <div class="bg-light p-4 rounded-4 text-center">
+                                                    <div class="text-primary fw-bolder mb-2">2025 - {{ _('Presente') }}</div>
+                                                <div class="fs-5 fw-bolder">{{ _('Analytics Engineer') }}</div>
+                                                <div class="small text-muted">Becall</div>
+                                                <div class="small text-muted">{{ _('España') }}</div>
+                                            </div>
+                                        </div>
+                                        <!-- Descripción y logros -->
+                                        <div class="col-lg-8">
+                                            <div>
+                                                <b>{{ _('Diseño y opero data pipelines, modelos semánticos en Power BI y automatizaciones operativas para convertir procesos manuales en sistemas escalables y confiables.') }}</b>
+                                                <br><br>
+                                                {{ _('Logros destacados:') }}
+                                                <br><br>
+                                            </div>
+                                            <ul>
+                                                <li>{{ _('Optimización de modelos Power BI complejos (hasta 347 medidas y 89 relaciones), mejorando rendimiento y gobernanza.') }}</li>
+                                                <li>{{ _('Construcción de data products en BigQuery para consolidar leads desde cientos de tablas y escalar el consumo analítico.') }}</li>
+                                                <li>{{ _('ETLs incrementales para Google Ads y Meta Ads hacia MySQL, con upserts, reintentos y alertas.') }}</li>
+                                                <li>{{ _('Automatización de procesos CRM con autenticación SSO + OTP, elevando la fiabilidad de ~30%% a ~90-95%% y procesando ~1000-2000 registros/día.') }}</li>
+                                                <li>{{ _('Integraciones con plataformas de contact center (sincronización de listas y utilidades DNC) para reducir fricción operativa y riesgo de compliance.') }}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                            
+                            <!-- Experience Card 2-->
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                            <div class="bg-light p-4 rounded-4 text-center">
+                                                <div class="text-primary fw-bolder mb-2">2024 - 2025</div>
+                                                <div class="fs-5 fw-bolder">{{ _('Desarrollador de inteligencia de negocios') }}</div>
+                                                <div class="small text-muted">{{ _('Viscofan S.A,') }}</div>
+                                                <div class="small text-muted">{{ _('São Paulo, Brazil') }}</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div>
+                                                <b>{{ _('En Viscofan, destaqué en la implementación de soluciones de análisis de datos e inteligencia empresarial para mejorar la toma de decisiones estratégicas.') }}</b>
+                                                <br><br>
+                                                {{ _('Logros obtenidos:') }}
+                                                <br><br>
+                                            </div>
+                                            <ul>
+                                                <li>{{ _('Desarrollo de soluciones automatizadas para mantener a los diferentes departamentos informados sobre ventas, finanzas e inteligencia de mercado.') }}</li>
+                                                <li>{{ _('Formaciones impartidas a empleados en análisis de datos con Power BI, fortaleciendo las capacidades analíticas del equipo.') }}</li>
+                                                <li>{{ _('Creación de informes de inteligencia sobre importaciones, utilizados por los directivos para decisiones estratégicas.') }}</li>
+                                                <li>{{ _('Optimización de procesos ETL para garantizar la calidad y disponibilidad de los datos.') }}</li>
+                                                <li>{{ _('Diseño y gestión de dashboards interactivos en Power BI, mejorando la visualización y análisis de datos empresariales.') }}</li>
+                                            </ul>
+                                        </div>                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Experience Card 2-->
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                            <div class="bg-light p-4 rounded-4 text-center">
+                                                <div class="text-primary fw-bolder mb-2">2023 - 2024</div>
+                                                <div class="fs-4 fw-bolder">{{ _('Investigador asociado') }}</div>
+                                                <div class="small text-muted">{{ _('Universidad de Las Palmas de Gran Canaria (ULPGC),') }}</div>
+                                                <div class="small text-muted">{{ _('Gran Canaria, España.') }}</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8"><div><b>{{ _('Como Investigador Asociado en la ULPGC, me centré en la investigación científica y el análisis de datos.') }}</b> <br><br> {{ _('Tareas claves realizadas: ') }} <br><br></div>
+                                        <ul>
+                                            <li>{{ _('Realización de investigaciones exhaustivas para artículos científicos en los campos de tecnología y negocios, aportando valor académico y práctico.') }}</li>
+                                            <li>{{ _('Extracción, limpieza y preparación de conjuntos de datos para análisis, garantizando la calidad y precisión de los datos.') }}</li>
+                                            <li>{{ _('Ejecución de análisis de datos detallados para identificar patrones y generar insights accionables.') }}</li>
+                                            <li>{{ _('Colaboración con colegas académicos para perfeccionar métodos de investigación y optimizar procesos de recolección de datos.') }}</li>
+                                        </ul>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- Education Section-->
+                        <section>
+                            <h2 class="text-primary fw-bolder mb-4">{{ _('Educación') }}</h2>
+                            <!-- Education Card 1-->
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <!-- Información del máster -->
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                            <div class="bg-light p-4 rounded-4 text-center">
+                                                <div class="text-primary fw-bolder mb-2">2023 - 2024</div>
+                                                <div class="mb-2">
+                                                    <div class="fs-4 fw-bolder">{{ _('Máster en Inteligencia de Negocios') }}</div>
+                                                </div>
+                                                <div class="fst-italic">
+                                                    <div class="small text-muted">{{ _('UNIR - Universidad Internacional de La Rioja') }}</div>
+                                                    <div class="small text-muted">{{ _('La Rioja, España') }}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Descripción y logros -->
+                                        <div class="col-lg-8">
+                                            <div>
+                                                <b>{{ _('Este máster me permitió adquirir habilidades avanzadas en inteligencia de negocios, con un enfoque en el análisis de datos, reporting estratégico y toma de decisiones basadas en datos.') }}</b>
+                                                <br><br>
+                                                {{ _('Logros y conocimientos adquiridos:') }}
+                                                <br><br>
+                                            </div>
+                                            <ul>
+                                                <li>{{ _('Desarrollo de dashboards interactivos en Power BI para la visualización y análisis de datos.') }}</li>
+                                                <li>{{ _('Implementación de estrategias de análisis predictivo utilizando Python para mejorar la toma de decisiones.') }}</li>
+                                                <li>{{ _('Diseño de modelos de datos y procesos ETL para optimizar la calidad y accesibilidad de la información empresarial.') }}</li>
+                                                <li>{{ _('Conocimiento avanzado en técnicas de reporting estratégico para respaldar el crecimiento empresarial.') }}</li>
+                                                <li>{{ _('Colaboración en proyectos académicos enfocados en casos reales, resolviendo problemas complejos de negocio mediante datos.') }}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                            
+                            <!-- Education Card 2-->
+                            <div class="card shadow border-0 rounded-4 mb-3">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <!-- Información del grado -->
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                            <div class="bg-light p-4 rounded-4 text-center">
+                                                <div class="text-primary fw-bolder mb-2">2018 - 2022</div>
+                                                <div class="mb-2">
+                                                    <div class="fs-6 fw-bolder">{{ _('Grado en Administración y Dirección de Empresas') }}</div>
+                                                </div>
+                                                <div class="fst-italic">
+                                                    <div class="small text-muted">{{ _('Universidad de Las Palmas de Gran Canaria (ULPGC)') }}</div>
+                                                    <div class="small text-muted">{{ _('Islas Canarias, España') }}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Descripción y logros -->
+                                        <div class="col-lg-8">
+                                            <div>
+                                                <b>{{ _('Este grado me proporcionó una sólida formación en gestión empresarial, abarcando áreas clave como finanzas, marketing, operaciones y estrategia.') }}</b>
+                                                <br><br>
+                                                {{ _('Logros y conocimientos adquiridos:') }}
+                                                <br><br>
+                                            </div>
+                                            <ul>
+                                                <li>{{ _('Adquisición de habilidades en análisis financiero y planificación estratégica para optimizar la gestión empresarial.') }}</li>
+                                                <li>{{ _('Desarrollo de competencias en marketing y gestión de operaciones para alinear las estrategias empresariales con los objetivos organizativos.') }}</li>
+                                                <li>{{ _('Familiarización con herramientas y técnicas de análisis de datos para respaldar la toma de decisiones basada en datos.') }}</li>
+                                                <li>{{ _('Participación en proyectos académicos que simularon desafíos empresariales reales, aplicando soluciones innovadoras y prácticas.') }}</li>
+                                                <li>{{ _('Comprensión integral de la gestión organizacional, desde la planificación hasta la ejecución efectiva de estrategias de negocio.') }}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </section>
+                        <!-- Divider-->
+                        <div class="pb-5"></div>
+                         <!-- Certifications Sections-->
+                        <section>
+                            <h2 class="text-primary fw-bolder mb-4">{{ _('Certificaciones') }}</h2>
+                            <!-- Card Power BI Certification -->
+                            <div class="card shadow border-0 rounded-4 mb-5 align-items-center">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <!-- Columna izquierda: Imagen -->
+                                        <div class="col-md-4 text-center text-md-start mb-4 mb-md-0">
+                                            <img src="{{ url_for('static', filename='images/PL-300.png') }}" 
+                                                alt="{{ _('Certificación Power BI: PL-300') }}" 
+                                                class="img-fluid rounded-4" 
+                                                style="max-width: auto; height: auto;">
+                                        </div>
+                                        <!-- Columna derecha: Descripción -->
+                                        <div class="col-md-8">
+                                            <h5 class="text-primary fw-bolder mb-2">{{ _('PL-300: Microsoft Power BI Data Analyst Associate') }}</h5>
+                                            <p class="text-muted mb-2">
+                                                {{ _('Esta certificación avala mi experiencia en el uso de Power BI para analizar datos y crear visualizaciones impactantes que facilitan la toma de decisiones empresariales. Valida habilidades clave como la preparación de datos, desarrollo de modelos y generación de informes efectivos.') }}
+                                            </p>
+                                            <p class="text-muted mb-2">
+                                                {{ _('Con esta certificación, demuestro mi capacidad para transformar datos en información accionable, optimizando los procesos de inteligencia empresarial de cualquier organización.') }}
+                                            </p>
+                                            <p class="fst-italic text-muted mb-0">{{ _('Emisión: 26 de agosto de 2024 · Renovación: agosto de 2025 · Vigente hasta: agosto de 2026') }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <div class="pb-5"></div>
+                         <!-- Skills Section-->
+                        <section>
+                            <!-- Skillset Card-->
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <!-- Professional skills list-->
+                                    <div class="mb-5">
+                                        <div class="d-flex align-items-center mb-4 text-center">
+                                            <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="bi bi-tools"></i></div>
+                                            <h3 class="fw-bolder mb-0 me-3 mt-2"><span class="text-gradient d-inline">{{ _('Competencias profesionales') }}</span></h3>
+                                        </div>
+                                        <div class="row row-cols-1 row-cols-md-3 mb-4">
+                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 me-3 ">{{ _('Analytics Engineering') }}</div></div>
+                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 me-3">{{ _('Data Engineering') }}</div></div>
+                                            <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 me-3">{{ _('Business Intelligence') }}</div></div>
+                                        </div>
+                                        <div class="row row-cols-1 row-cols-md-3">
+                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 me-3">{{ _('Automatización de procesos') }}</div></div>
+                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 me-3">{{ _('ETL / ELT') }}</div></div>
+                                            <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 me-3">{{ _('Modelado semántico') }}</div></div>
+                                        </div>
+                                    </div>
+                                    <!-- tech used-->
+                                    <div class="mb-0">
+                                        <div class="d-flex align-items-center mb-4 text-center">
+                                            <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="bi bi-code-slash"></i></div>
+                                            <h3 class="fw-bolder mb-0 me-3 mt-2"><span class="text-gradient d-inline">{{ _('Tecnologías usadas') }}</span></h3>
+                                        </div>
+                                        <div class="row row-cols-1 row-cols-md-3 mb-4">
+                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 me-3">{{ _('Power BI (DAX/M)') }}</div></div>
+                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 me-3">{{ _('BigQuery') }}</div></div>
+                                            <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 me-3">{{ _('Python') }}</div></div>
+                                        </div>
+                                        <div class="row row-cols-1 row-cols-md-3">
+                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 me-3">{{ _('SQL') }}</div></div>
+                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 me-3">{{ _('MySQL') }}</div></div>
+                                            <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 me-3">{{ _('Playwright / Selenium') }}</div></div>
+                                        </div>
+                                    </div>
+                                    <!-- Languages Section -->
+                                    <div class="mt-5 text-center">
+                                        <div class="d-flex align-items-center mb-4">
+                                            <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
+                                                <i class="bi bi-translate"></i>
+                                            </div>
+                                            <h3 class="fw-bolder mb-0 me-3 mt-2"><span class="text-gradient d-inline">{{ _('Idiomas') }}</span></h3>
+                                        </div>
+                                        <div class="d-flex flex-wrap align-items-center justify-content-between gap-4 text-center me-3">
+                                            <!-- Spanish -->
+                                            <div class="text-center">
+                                                <div style="width: 60px; height: 40px; overflow: hidden; display: inline-block;">
+                                                    <img src="{{ url_for('static', filename='images/Spain.png') }}" 
+                                                        alt="Spanish" 
+                                                        style="width: 100%; height: 100%; object-fit: cover;">
+                                                </div>
+                                                <p class="mt-3 mb-0 text-muted">{{ _('Español (nativo)') }}</p>
+                                            </div>
+                                            <!-- English -->
+                                            <div class="text-center">
+                                                <div style="width: 60px; height: 40px; overflow: hidden; display: inline-block;">
+                                                    <img src="{{ url_for('static', filename='images/UK.png') }}" 
+                                                        alt="English" 
+                                                        style="width: 100%; height: 100%; object-fit: cover;">
+                                                </div>
+                                                <p class="mt-3 mb-0 text-muted">{{ _('Inglés (Avanzado)') }}</p>
+                                            </div>
+                                            <!-- Portuguese -->
+                                            <div class="text-center">
+                                                <div style="width: 60px; height: 40px; overflow: hidden; display: inline-block;">
+                                                    <img src="{{ url_for('static', filename='images/Brazil.png') }}" 
+                                                        alt="Portuguese" 
+                                                        style="width: 100%; height: 100%; object-fit: cover;">
+                                                </div>
+                                                <p class="mt-3 mb-0 text-muted">{{ _('Portugués (Brazil - Avanzado)') }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Footer-->
+        <footer class="bg-white py-4 mt-auto">
+            <div class="px-5 footer-container">
+                <div class="footer-content d-flex justify-content-between align-items-center flex-column flex-sm-row">
+                    <div class="text text-start">
+                        <p class="mb-0 mb-1">
+                            {{ _('Sitio web diseñado y desarrollado por mi con') }} 
+                            <a href="https://flask.palletsprojects.com/" target="_blank" style="color: inherit; text-decoration: none;">
+                                Flask
+                            </a>
+                        </p>
+                        <p class="mb-0 text-muted">{{ _('David Zerpa') }} {{ current_year }}. &copy; </p>
+                    </div>
+                    <div class="mt-sm-0">
+                        <a class="icons text-primary text-decoration-none me-3 icon-hover" href="https://www.linkedin.com/in/davidzerpago" target="_blank" rel="noopener noreferrer" style="font-size: 2rem;">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a class="icons text-primary text-decoration-none me-3 icon-hover" href="https://github.com/DavidZerpa96" target="_blank" rel="noopener noreferrer" style="font-size: 2rem;">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a class="icons text-primary text-decoration-none icon-hover" href="{{ url_for('contact', lang=request.args.get('lang', 'en')) }}" rel="noopener noreferrer" style="font-size: 2rem;">
+                            <i class="bi bi-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>       
+        <!-- Modal -->
+        <div class="modal fade" id="resumeModal" tabindex="-1" aria-labelledby="resumeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center w-100" id="resumeModalLabel">{{ _('Choose Resume Language') }}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <p>{{ _('Please select the version of the resume you want to download:') }}</p>
+                        <div class="d-flex justify-content-around mt-4">
+                            <a href="{{ url_for('static', filename='files/CV-English.pdf') }}" class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" id="downloadEnglish" download>{{ _('English') }}</a>
+                            <a href="{{ url_for('static', filename='files/CV-Espanol.pdf' ) }}" class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" id="downloadSpanish" download>{{ _('Español') }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
+
+
+                        
+
+                       
+                        

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="{{ _('Descubre cómo David Zerpa puede ayudarte a llevar tus proyectos al siguiente nivel con soluciones personalizadas de análisis de datos y automatización.') }}">
+        <meta name="keywords" content="Hotels GC, análisis de datos, hoteles, turismo, inteligencia de negocios, pymes, Canarias, Power BI, automatización, visualización de datos">
+        <meta name="author" content="David Zerpa" />
+        <title> {{_('Buscador de hoteles')}}</title>
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+        <!-- Bootstrap Icons -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core CSS -->
+        <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/Icon.ico') }}" />
+    </head>
+    <body class="d-flex flex-column">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="{{ url_for('home', lang=request.args.get('lang', 'es')) }}"><span class="fw-bolder text-primary">{{ _('David Zerpa') }}</span></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ _('Toggle navigation') }}"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mt-2 mb-lg-0 small fw-bolder">
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('home', lang=request.args.get('lang', 'es')) }}">{{ _('INICIO') }}</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('services', lang=request.args.get('lang', 'es')) }}">{{ _('SERVICIOS') }}</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('resume', lang=request.args.get('lang', 'en')) }}">{{ _('CURRÍCULUM') }}</a></li>
+                            <li class="nav-item"><a class="nav-link nav-item-selected" href="{{ url_for('projects', lang=request.args.get('lang', 'es')) }}">{{ _('PROYECTOS') }}</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('contact', lang=request.args.get('lang', 'es')) }}">{{ _('CONTACTO') }}</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Header -->
+            <header class="py-5 bg-light text-center">
+                <div class="container">
+                    <h1 class="fw-bold text-primary display-1">{{ _('Buscador de hoteles') }}</h1>
+                    <p class="text-muted lead">{{ _('Buscador de los mejores hoteles de Gran Canaria.') }}</p>
+                </div>
+            </header>
+            <!-- Dashboard Section -->
+            <section class="py-5 bg-white">
+                <div class="container text-center">
+                    <h2 class="display-5  fw-bolder mb-0"><span class="text-gradient d-inline">{{ _('Encuentra tu hotel ideal') }}</span></h2>
+                    <p class="text-muted">{{ _('Para visualizar el panel, es preferible usar dispositivos sobremesas o tabletas') }}</p>
+                    <div class="ratio ratio-16x9">
+                        <iframe title="{{ _('Hotels Report') }}" width="1024" height="804" src="https://app.powerbi.com/view?r=eyJrIjoiYjM4NTVhNTAtMDQ2ZS00NzljLTkwNWUtNmMyZDkwNzYyZTQ4IiwidCI6IjE3MzdjOGJiLTlkYWItNDBiZS1hM2M0LWJkYTFhNzgyYTI4YyJ9" frameborder="0" allowfullscreen="true"></iframe>
+                    </div>
+                </div>
+            </section>
+            <!-- Project Details Section -->
+            <section class="py-5 bg-light">
+                <div class="container">
+                    <h2 class="display-3 fw-bolder mb-2 text-center">
+                        <span class="text-gradient d-inline">{{ _('Detalles del Proyecto') }}</span>
+                    </h2>
+                    <h3 class="mt-4 fw-bold text-primary">{{ _('Objetivo Principal') }}</h3>
+                    <p>{{ _('El objetivo de este proyecto es automatizar la extracción, limpieza, almacenamiento y análisis de datos relacionados con las ofertas de alojamiento en Gran Canaria. El flujo de trabajo integra Python para la extracción y procesamiento de datos, Azure SQL Server para la gestión de la base de datos, y Power BI para la creación de dashboards interactivos. La base de datos se actualiza semanalmente, proporcionando información sobre tendencias de precios, tipos de habitación, ubicaciones y puntuaciones de clientes.') }}</p>
+                    <p>{{ _('Por ello, he desarrollado un sistema automatizado que extrae información valiosa sobre las ofertas de alojamiento en Gran Canaria, apoyando la toma de decisiones estratégicas en el sector turístico y mejorando la visibilidad de las tendencias del mercado.') }}</p>
+                    
+                    <h3 class="mt-4 fw-bold text-primary">{{ _('Alcance del Proyecto') }}</h3>
+                    <ul>
+                        <li class="mb-3 mt-1"><strong>{{ _('Automatización de Web Scraping:') }}</strong>
+                            <ul class="list-group mb-1">
+                                <li class="list-group-item mb-2">{{ _('Herramienta utilizada: Selenium con Python.') }}</li>
+                                <li class="list-group-item mb-2">{{ _('Frecuencia: Ejecución semanal cada lunes.') }}</li>
+                                <li class="list-group-item mb-2">{{ _('Periodo de búsqueda: Se recogen datos de los próximos cuatro fines de semana (incluyendo la semana actual), específicamente de viernes a domingo.') }}</li>
+                                <li class="list-group-item mb-2">{{ _('Parámetros de búsqueda:') }}
+                                    <ul>
+                                        <li>{{ _('Destino: Gran Canaria') }}</li>
+                                        <li>{{ _('Huéspedes: Dos adultos') }}</li>
+                                        <li>{{ _('Duración de la estancia: Dos noches') }}</li>
+                                    </ul>
+                                </li>
+                                <li class="list-group-item mb-2">{{ _('Datos recopilados:') }}
+                                    <ul>
+                                        <li>{{ _('Nombre del alojamiento') }}</li>
+                                        <li>{{ _('Ubicación') }}</li>
+                                        <li>{{ _('Tipo de habitación') }}</li>
+                                        <li>{{ _('Precio') }}</li>
+                                        <li>{{ _('Opiniones') }}</li>
+                                        <li>{{ _('Puntuación') }}</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="mb-3"><strong>{{ _('Limpieza y transformación de datos:') }}</strong> {{ _('Utilizando Python y Pandas para normalizar datos y calcular métricas como el precio por noche.') }}</li>
+                        <li class="mb-3"><strong>{{ _('Base de datos en la nube:') }}</strong> {{ _('Azure SQL Server para el almacenamiento estructurado de datos.') }}</li>
+                        <li class="mb-3"><strong>{{ _('Dashboard interactivo:') }}</strong> {{ _('Visualizaciones en Power BI destacando tendencias de precios y puntuaciones.') }}</li>
+                    </ul>
+                    
+                    <h3 class="mt-4 fw-bold text-primary">{{ _('Flujo de Trabajo') }}</h3>
+                    <ol class="list-group list-group-numbered">
+                        <li class="list-group-item mb-3"><strong>{{ _('Extracción de datos:') }}</strong>
+                            <ul>
+                                <li>{{ _('El script de scraping se ejecuta cada lunes.') }}</li>
+                                <li>{{ _('Los datos se extraen de sitios web utilizando Selenium y se almacenan temporalmente en un DataFrame de Pandas.') }}</li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item mb-3"><strong>{{ _('Limpieza de datos:') }}</strong>
+                            <ul>
+                                <li>{{ _('Los datos se limpian, transforman y procesan con Python y Pandas.') }}</li>
+                                <li>{{ _('Las transformaciones clave incluyen la normalización de texto y el cálculo de métricas derivadas.') }}</li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item mb-3"><strong>{{ _('Almacenamiento de datos:') }}</strong>
+                            <ul>
+                                <li>{{ _('Los datos limpiados se suben a una base de datos en la nube alojada en Azure SQL Server.') }}</li>
+                                <li>{{ _('La tabla de hoteles se actualiza semanalmente utilizando pyodbc y consultas SQL para una inserción eficiente de datos.') }}</li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item mb-3"><strong>{{ _('Visualización de datos:') }}</strong>
+                            <ul>
+                                <li>{{ _('Power BI se conecta a la base de datos de Azure para generar dashboards interactivos.') }}</li>
+                                <li>{{ _('Los dashboards presentan información clara y accionable.') }}</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </section>            
+            <!-- Resultados Esperados -->
+            <section class="py-5 bg-white">
+                <div class="container">
+                    <h2 class="display-3 fw-bolder mb-2 text-center"><span class="text-gradient d-inline">{{ _('Resultados Esperados') }}</span></h2>
+                    <p class="mt-4">{{ _('Identificar ubicaciones con altas puntuaciones, monitorear tendencias de precios y comparar tipos de habitaciones para apoyar la toma de decisiones estratégicas. Este sistema automatizado minimiza el esfuerzo manual y garantiza información actualizada cada semana.') }}</p>
+                    <ol class="list-group list-group-numbered mt-3">
+                        <li class="list-group-item mb-4"><strong>{{ _('Información Clave:') }}</strong>
+                            <ul class="list-group mb-2 mt-1">
+                                <li class="ms-4 mb-1">{{ _('Identificar Ubicaciones con Mejores Puntuaciones: Determinar qué alojamientos reciben las mejores opiniones y valoraciones.') }}</li>
+                                <li class="ms-4 mb-1">{{ _('Monitorear Tendencias de Precios: Analizar cómo fluctúan los precios de los alojamientos semana a semana.') }}</li>
+                                <li class="ms-4 mb-1">{{ _('Comparar Precios por Municipios: Estudiar las diferencias de precios entre diferentes municipios y localidades de Gran Canaria.') }}</li>
+                                <li class="ms-4 mb-1">{{ _('Analizar Precios Según el Tipo de Habitación: Comprender cómo los diferentes tipos de habitaciones (apartamentos, bungalows, habitaciones de hotel) influyen en los precios.') }}</li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item mb-4"><strong>{{ _('Automatización Completa:') }}</strong>
+                            <ul class="list-group mb-2 mt-1">
+                                <li class="ms-4 mb-1">{{ _('Esfuerzo Manual Mínimo: El scraping automatizado y las actualizaciones directas en la base de datos reducen la necesidad de recopilación manual de datos.') }}</li>
+                                <li class="ms-4 mb-1">{{ _('Actualizaciones Semanales: Programación de la ejecución del código de extración y del panel en Power BI a través de cron job en un VPS y Power BI Services.') }}</li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item mb-4"><strong>{{ _('Una Herramienta Valiosa para el Sector Turístico:') }}</strong>
+                            <ul class="list-group mb-2 mt-1">
+                                <li class="ms-4 mb-1">{{ _('Toma de Decisiones Basada en Datos: Dashboards dinámicos permiten a las partes interesadas tomar decisiones informadas basadas en información en tiempo real.') }}</li>
+                                <li class="ms-4 mb-1">{{ _('Análisis de Tendencias del Mercado: Comprender las tendencias de precios, preferencias de los clientes y popularidad de los alojamientos ayuda en la planificación estratégica y el marketing.') }}</li>
+                                <li class="ms-4 mb-1">{{ _('Benchmarking Competitivo: Los hoteles y proveedores de alojamiento pueden comparar sus ofertas con las de los competidores en términos de precios y calidad.') }}</li>
+                                <li class="ms-4 mb-1">{{ _('Asignación de Recursos: Información sobre períodos y ubicaciones de alta demanda ayuda a optimizar la asignación de recursos y la gestión de inventarios.') }}</li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item mb-4"><strong>{{ _('Beneficio para los Consumidores:') }}</strong>
+                            <ul class="list-group mb-2 mt-1">
+                                <li class="ms-4 mb-1">{{ _('Herramienta de Comparación: Permite a los consumidores comparar opciones de alojamiento según precio, ubicación y calidad.') }}</li>
+                                <li class="ms-4 mb-1">{{ _('Tiempos Óptimos de Reserva: Identifica los mejores momentos para reservar alojamientos a precios favorables.') }}</li>
+                                <li class="ms-4 mb-1">{{ _('Análisis Calidad-Precio: Ayuda a los consumidores a encontrar alojamientos con la mejor relación calidad-precio.') }}</li>
+                                <li class="ms-4 mb-1">{{ _('Toma de Decisiones Informada: Empodera a los consumidores con información basada en datos para elegir alojamientos que se ajusten mejor a sus necesidades y presupuestos.') }}</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+            <!-- Impacto -->
+            <section class="py-5 bg-light">
+                <div class="container">
+                    <h2 class="display-3 fw-bolder mb-2 text-center"><span class="text-gradient d-inline">{{ _('Impacto') }}</span></h2>
+                    <p class="mt-3">{{ _('Este proyecto destaca por ofrecer un análisis detallado y un buscador de alojamientos en Gran Canaria, ideal para cualquier tipo de usuario, desde turistas que buscan las mejores opciones de calidad-precio hasta empresas del sector turístico interesadas en datos estratégicos. Combina la automatización, la gestión eficiente de datos en la nube y dashboards interactivos para proporcionar información clara y actualizada, lo que lo convierte en una herramienta esencial para la toma de decisiones y la optimización de estrategias en el sector de la hospitalidad.') }}</p>
+                    <ul class="list-group mt-3">
+                        <li class="list-group-item mb-5"><strong>{{ _('Para el Sector Turístico:') }}</strong>
+                            <ul class="mb-2">
+                                <li class="mb-2 mt-2">{{ _('Planificación Estratégica Mejorada: Proporciona información accionable que ayuda a las empresas turísticas a planificar sus ofertas, estrategias de precios y campañas de marketing de manera efectiva.') }}</li>
+                                <li class="mb-2">{{ _('Mejor Comprensión del Mercado: Ofrece una vista integral del mercado de alojamientos en Gran Canaria, destacando tendencias y preferencias de los consumidores.') }}</li>
+                                <li class="mb-2">{{ _('Ventaja Competitiva: Permite a las empresas adelantarse entendiendo los precios y la calidad de los servicios de los competidores, realizando ajustes oportunos en sus propias ofertas.') }}</li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item mb-2"><strong>{{ _('Para los Consumidores:') }}</strong>
+                            <ul class="mb-2">
+                                <li class="mb-2 mt-2">{{ _('Decisiones Informadas: Los consumidores pueden tomar decisiones fundamentadas comparando diversas opciones de alojamiento según sus preferencias específicas y presupuestos.') }}</li>
+                                <li class="mb-2">{{ _('Ahorro de Costos: Identificar los mejores momentos para reservar alojamientos puede generar ahorros significativos, haciendo los viajes más asequibles.') }}</li>
+                                <li class="mb-2">{{ _('Experiencia Óptima: Al analizar la relación calidad-precio, los consumidores pueden seleccionar alojamientos que ofrezcan el mejor valor, asegurando una estancia satisfactoria.') }}</li>
+                                <li class="mb-2">{{ _('Transparencia: Proporciona una visión clara del panorama de alojamientos, ayudando a los consumidores a comprender los factores que influyen en precios y calidad.') }}</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="py-5 bg-white">
+                <div class="container">
+                    <h2 class="display-3 fw-bolder mb-2 text-center"><span class="text-gradient d-inline">{{ _('Conclusión') }}</span></h2>
+                    <div class="card overflow-hidden shadow rounded-4 border-0 px-2 py-2">
+                        <p class="mb-4 mt-4 ms-4 me-4">{{ _('Este proyecto integra de manera eficiente web scraping, almacenamiento de datos en la nube y visualizaciones interactivas para proporcionar análisis de alto valor tanto para la industria turística como para los consumidores. Al automatizar la extracción de datos y emplear herramientas avanzadas de visualización, optimiza los procesos de análisis y dota a los usuarios de información accionable para tomar decisiones fundamentadas.') }}</p>
+                        <p class="mb-4 ms-4 me-4">{{ _('El impacto significativo tanto en los actores del sector como en los usuarios finales resalta la relevancia y eficacia de esta solución, posicionándola como un componente destacado en cualquier portafolio enfocado en el análisis de datos.') }}</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <section class="py-5 bg-gradient-primary-to-secondary text-white">
+            <div class="container text-center">
+                <h2 class="display-4 fw-bolder">{{ _('Convierte tus datos en tu mejor aliado') }}</h2>
+                <p class="text-center">{{ _('¿Listo para transformar tu negocio? Contáctame para crear soluciones personalizadas que impulsen tu negocio.') }}</p>
+                <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="{{ url_for('contact', lang=request.args.get('lang', 'es')) }}">{{ _('Hablemos') }}</a>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer class="bg-white py-4 mt-auto">
+            <div class="px-5 footer-container">
+                <div class="footer-content d-flex justify-content-between align-items-center flex-column flex-sm-row">
+                    <div class="text text-start">
+                        <p class="mb-0 mb-1">
+                            {{ _('Sitio web diseñado y desarrollado por mi con') }} 
+                            <a href="https://flask.palletsprojects.com/" target="_blank" style="color: inherit; text-decoration: none;">
+                                Flask
+                            </a>
+                        </p>
+                        <p class="mb-0 text-muted">{{ _('David Zerpa') }} {{ current_year }}. &copy; </p>
+                    </div>
+                    <div class="mt-sm-0">
+                        <a class="icons text-primary text-decoration-none me-3 icon-hover" href="https://www.linkedin.com/in/davidzerpago" target="_blank" rel="noopener noreferrer" style="font-size: 2rem;">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a class="icons text-primary text-decoration-none me-3 icon-hover" href="https://github.com/DavidZerpa96" target="_blank" rel="noopener noreferrer" style="font-size: 2rem;">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a class="icons text-primary text-decoration-none icon-hover" href="{{ url_for('contact', lang=request.args.get('lang', 'en')) }}" rel="noopener noreferrer" style="font-size: 2rem;">
+                            <i class="bi bi-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer> 
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

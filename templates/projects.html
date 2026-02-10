@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="{{ _('Portfolio híbrido: proyectos profesionales (anonimizados) y proyectos personales. Data pipelines, Power BI, BigQuery, Python y automatización.') }}">
+        <meta name="keywords" content="Portfolio, proyectos, David Zerpa, Analytics Engineer, Power BI, BigQuery, Python, SQL, automatización, ETL, data engineering">
+        <meta name="author" content="David Zerpa" />
+        <title>{{ _('Projects') }}</title>
+        <!-- Custom Google font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/Icon.ico') }}" />
+    </head>
+    <body class="d-flex flex-column h-100 bg-light">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="{{ url_for('home', lang=request.args.get('lang', 'es')) }}"><span class="fw-bolder text-primary">{{ _('David Zerpa') }}</span></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ _('Toggle navigation') }}"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mt-2 mb-lg-0 small fw-bolder">
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('home', lang=request.args.get('lang', 'es')) }}">{{ _('INICIO') }}</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('services', lang=request.args.get('lang', 'es')) }}">{{ _('SERVICIOS') }}</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('resume', lang=request.args.get('lang', 'en')) }}">{{ _('CURRÍCULUM') }}</a></li>
+                            <li class="nav-item"><a class="nav-link nav-item-selected" href="{{ url_for('projects', lang=request.args.get('lang', 'es')) }}">{{ _('PROYECTOS') }}</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('contact', lang=request.args.get('lang', 'es')) }}">{{ _('CONTACTO') }}</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Projects Section-->
+            <section class="py-3">
+                <div class="container px-3 mb-5">
+                    <div class="text-center mb-5">
+                        <h1 class="display-3 fw-bolder mb-0">
+                            <span class="text-gradient d-inline">{{ _('Proyectos') }}</span>
+                        </h1>
+                    </div>
+                    <div class="row gx-3 justify-content-center">
+                        <div class="col-lg-11 col-xl-9 col-xxl-9">
+                            <p class="text-center text-muted fs-5 mb-4">
+                                {{ _('Un portfolio híbrido: proyectos personales y casos profesionales (anonimizados) para mostrar stack, arquitectura e impacto sin exponer datos sensibles.') }}
+                            </p>
+
+                            <ul class="nav nav-pills justify-content-center mb-4" id="portfolioTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active fw-bolder" id="portfolio-professional-tab" data-bs-toggle="pill" data-bs-target="#portfolio-professional" type="button" role="tab" aria-controls="portfolio-professional" aria-selected="true">
+                                        {{ _('Profesional (2025-2026)') }}
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link fw-bolder" id="portfolio-personal-tab" data-bs-toggle="pill" data-bs-target="#portfolio-personal" type="button" role="tab" aria-controls="portfolio-personal" aria-selected="false">
+                                        {{ _('Personal') }}
+                                    </button>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content" id="portfolioTabContent">
+                                <!-- Professional Portfolio -->
+                                <div class="tab-pane fade show active" id="portfolio-professional" role="tabpanel" aria-labelledby="portfolio-professional-tab">
+                                    <!-- Case 1 -->
+                                    <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                                        <div class="row g-0">
+                                            <div class="col-md-4 d-flex align-items-center justify-content-center bg-light">
+                                                <div class="text-center p-4">
+                                                    <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="bi bi-bar-chart-line"></i></div>
+                                                    <p class="text-muted mb-0">{{ _('Power BI') }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="p-5">
+                                                    <h2 class="fw-bolder text-center text-primary mb-3">{{ _('Optimización de modelos semánticos (Power BI)') }}</h2>
+                                                    <p>{{ _('Auditoría y refactor de modelos complejos para mejorar rendimiento y mantenibilidad sin afectar reportes en producción.') }}</p>
+                                                    <ul class="text-muted">
+                                                        <li>{{ _('Modelos de hasta 347 medidas y 89 relaciones.') }}</li>
+                                                        <li>{{ _('Reducción de patrones DAX costosos y mejora de gobernanza del modelo.') }}</li>
+                                                    </ul>
+                                                    <div class="d-flex flex-wrap gap-2 mt-3">
+                                                        <span class="badge bg-light text-dark border">{{ _('Power BI') }}</span>
+                                                        <span class="badge bg-light text-dark border">{{ _('DAX') }}</span>
+                                                        <span class="badge bg-light text-dark border">{{ _('Power Query M') }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Case 2 -->
+                                    <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                                        <div class="row g-0">
+                                            <div class="col-md-4 d-flex align-items-center justify-content-center bg-light">
+                                                <div class="text-center p-4">
+                                                    <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="bi bi-database"></i></div>
+                                                    <p class="text-muted mb-0">{{ _('BigQuery') }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="p-5">
+                                                    <h2 class="fw-bolder text-center text-primary mb-3">{{ _('Data products en BigQuery (consolidación de leads)') }}</h2>
+                                                    <p>{{ _('Diseño de capa de vistas analíticas para unificar cientos de tablas heterogéneas y habilitar consumo escalable por BI y operación.') }}</p>
+                                                    <ul class="text-muted">
+                                                        <li>{{ _('Estrategia de vistas intermedias para evitar límites técnicos de plataforma.') }}</li>
+                                                        <li>{{ _('Automatización para incorporar nuevas tablas sin hardcodeo manual.') }}</li>
+                                                    </ul>
+                                                    <div class="d-flex flex-wrap gap-2 mt-3">
+                                                        <span class="badge bg-light text-dark border">{{ _('BigQuery') }}</span>
+                                                        <span class="badge bg-light text-dark border">{{ _('SQL') }}</span>
+                                                        <span class="badge bg-light text-dark border">{{ _('Python') }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Case 3 -->
+                                    <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                                        <div class="row g-0">
+                                            <div class="col-md-4 d-flex align-items-center justify-content-center bg-light">
+                                                <div class="text-center p-4">
+                                                    <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="bi bi-graph-up"></i></div>
+                                                    <p class="text-muted mb-0">{{ _('Marketing Analytics') }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="p-5">
+                                                    <h2 class="fw-bolder text-center text-primary mb-3">{{ _('ETLs de Marketing (Google Ads + Meta Ads)') }}</h2>
+                                                    <p>{{ _('ETLs incrementales con reintentos/backoff, upserts e idempotencia para centralizar performance de paid media en un modelo analítico.') }}</p>
+                                                    <ul class="text-muted">
+                                                        <li>{{ _('Control de incrementalidad por watermark y ventana de solape.') }}</li>
+                                                        <li>{{ _('Orquestación, logs y alertas para operación estable.') }}</li>
+                                                    </ul>
+                                                    <div class="d-flex flex-wrap gap-2 mt-3">
+                                                        <span class="badge bg-light text-dark border">{{ _('Python') }}</span>
+                                                        <span class="badge bg-light text-dark border">{{ _('MySQL') }}</span>
+                                                        <span class="badge bg-light text-dark border">{{ _('APIs') }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Case 4 -->
+                                    <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                                        <div class="row g-0">
+                                            <div class="col-md-4 d-flex align-items-center justify-content-center bg-light">
+                                                <div class="text-center p-4">
+                                                    <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="bi bi-shield-lock"></i></div>
+                                                    <p class="text-muted mb-0">{{ _('Automatización') }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="p-5">
+                                                    <h2 class="fw-bolder text-center text-primary mb-3">{{ _('Automatización de procesos CRM (SSO + OTP)') }}</h2>
+                                                    <p>{{ _('Automatización end-to-end: autenticación, descarga, validación, limpieza y upsert con reintentos multi-etapa y reporte por email.') }}</p>
+                                                    <ul class="text-muted">
+                                                        <li>{{ _('Fiabilidad de ejecución mejorada de ~30%% a ~90-95%%.') }}</li>
+                                                        <li>{{ _('Procesamiento típico: ~1000-2000 registros/día.') }}</li>
+                                                    </ul>
+                                                    <div class="d-flex flex-wrap gap-2 mt-3">
+                                                        <span class="badge bg-light text-dark border">{{ _('Playwright/Selenium') }}</span>
+                                                        <span class="badge bg-light text-dark border">{{ _('Python') }}</span>
+                                                        <span class="badge bg-light text-dark border">{{ _('MySQL') }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Case 5 -->
+                                    <div class="card overflow-hidden shadow rounded-4 border-0 mb-4">
+                                        <div class="row g-0">
+                                            <div class="col-md-4 d-flex align-items-center justify-content-center bg-light">
+                                                <div class="text-center p-4">
+                                                    <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="bi bi-telephone"></i></div>
+                                                    <p class="text-muted mb-0">{{ _('Integraciones') }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="p-5">
+                                                    <h2 class="fw-bolder text-center text-primary mb-3">{{ _('Integraciones operativas (Contact Center) + DNC') }}</h2>
+                                                    <p>{{ _('Integración entre warehouse y plataformas operativas para sincronizar listas, automatizar reportes y estandarizar gestión DNC (compliance).') }}</p>
+                                                    <ul class="text-muted">
+                                                        <li>{{ _('Jobs batch programados con deduplicación y dry-run.') }}</li>
+                                                        <li>{{ _('Utilidades reutilizables (CLI) para operaciones de bloqueo/consulta/desbloqueo.') }}</li>
+                                                    </ul>
+                                                    <div class="d-flex flex-wrap gap-2 mt-3">
+                                                        <span class="badge bg-light text-dark border">{{ _('Python') }}</span>
+                                                        <span class="badge bg-light text-dark border">{{ _('BigQuery') }}</span>
+                                                        <span class="badge bg-light text-dark border">{{ _('APIs') }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Personal Portfolio -->
+                                <div class="tab-pane fade" id="portfolio-personal" role="tabpanel" aria-labelledby="portfolio-personal-tab">
+                            <!-- Tarjeta del Proyecto 1 -->
+                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                                <div class="row g-0">
+                                    <!-- Imagen del Proyecto -->
+                                    <div class="col-md-4">
+                                        <a href="{{ url_for('PortfolioHotel', lang=request.args.get('lang', 'es')) }}">
+                                            <img src="{{ url_for('static', filename='images/GCHotelsProject.webp') }}" 
+                                                 class="img-fluid rounded-start" 
+                                                 alt="{{ _('Proyecto de Gran Canaria') }}">
+                                        </a>
+                                    </div>
+                                    <!-- Contenido del Proyecto -->
+                                    <div class="col-md-8">
+                                        <div class="p-5">
+                                            <h2 class="fw-bolder text-center text-primary mb-4">{{ _('Buscador de hoteles') }}</h2>
+                                            <p>
+                                                {{ _('Este proyecto se centra en el análisis y la monitorización de las ofertas de alojamiento en la isla de Gran Canaria. Utiliza datos reales y actualizados semanalmente para proporcionar insights valiosos sobre tendencias de precios, disponibilidad y opiniones de clientes.') }}
+                                            </p>
+                                            <p>
+                                                {{ _('Descubre cómo el análisis basado en datos puede mejorar la toma de decisiones tanto para viajeros como para proveedores de servicios.') }}
+                                            </p>
+                                            <div class="text-center mt-4">
+                                                <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder justify-content-center" 
+                                                   href="{{ url_for('PortfolioHotel', lang=request.args.get('lang', 'es')) }}">
+                                                    {{ _('Ver Proyecto') }}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Proyecto: Dashboard de Negocios Dinámico para Tienda de Deportes -->
+                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                                <div class="row g-0">
+                                    <!-- Imagen del Proyecto -->
+                                    <div class="col-md-4">
+                                        <a href="{{ url_for('PortfolioSport', lang=request.args.get('lang', 'es')) }}">
+                                            <img src="{{ url_for('static', filename='images/SportCollections.webp') }}" 
+                                                 class="img-fluid rounded-start" 
+                                                 alt="{{ _('Proyecto Tienda de Deportes') }}">
+                                        </a>
+                                    </div>
+                                    <!-- Contenido del Proyecto -->
+                                    <div class="col-md-8">
+                                        <div class="p-5">
+                                            <h2 class="fw-bolder text-center text-primary mb-4">{{ _('Análisis financiero y logístico de Sport Collection') }}</h2>
+                                            <p>
+                                                {{ _('Este proyecto presenta un dashboard interactivo en Power BI diseñado para empoderar a los gerentes y empleados de una tienda de deportes con una herramienta completa para gestionar inventarios, analizar el rendimiento y supervisar las ventas.') }}
+                                            </p>
+                                            <p>
+                                                {{ _(' Combina visualizaciones dinámicas y modelos de datos avanzados para abordar necesidades operativas críticas y proporcionar insights accionables.') }}
+                                            </p>
+                                            <div class="text-center mt-4">
+                                                <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder justify-content-center" 
+                                                href="{{ url_for('PortfolioSport', lang=request.args.get('lang', 'es')) }}">
+                                                    {{ _('Ver Proyecto') }}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Proyecto: Análisis Integral de Recursos Humanos -->
+                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                                <div class="row g-0">
+                                    <!-- Imagen del Proyecto -->
+                                    <div class="col-md-4">
+                                        <a href="{{ url_for('PortfolioGarbel', lang=request.args.get('lang', 'es')) }}">
+                                            <img src="{{ url_for('static', filename='images/GarbelFrontPage.webp') }}" 
+                                                 class="img-fluid rounded-start" 
+                                                 alt="{{ _('Proyecto de Recursos Humanos') }}">
+                                        </a>
+                                    </div>
+                                    <!-- Contenido del Proyecto -->
+                                    <div class="col-md-8">
+                                        <div class="p-5">
+                                            <h2 class="fw-bolder text-center text-primary mb-4">{{ _('Dashboard analítico para la gestión de Recursos Humanos') }}</h2>
+                                            <p>
+                                                {{ _('Un dashboard interactivo en Power BI creado para analizar la rotación de empleados y el rendimiento de los recursos humanos en Garbel S.L. Esta solución ayuda a los departamentos de RRHH a identificar los principales factores de rotación, evaluar métricas de satisfacción y obtener insights accionables para la gestión de la fuerza laboral.') }}
+                                            </p>
+                                            <p> {{ _('Su diseño dinámico y escalable lo convierte en una herramienta poderosa para mejorar las estrategias de retención y optimizar los procesos de recursos humanos.') }} </p>
+                                            <div class="text-center mt-4">
+                                                <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder justify-content-center" 
+                                                href="{{ url_for('PortfolioGarbel', lang=request.args.get('lang', 'es')) }}">
+                                                    {{ _('Ver Proyecto') }}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Proyecto: Dashboard analítico financiero -->
+                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                                <div class="row g-0">
+                                    <!-- Imagen del Proyecto -->
+                                    <div class="col-md-4">
+                                        <a href="{{ url_for('FinancialDashboard', lang=request.args.get('lang', 'es')) }}">
+                                            <img src="{{ url_for('static', filename='images/FinancialFrontPage.webp') }}" 
+                                                 class="img-fluid rounded-start" 
+                                                 alt="Dashboard Analítico Financiero">
+                                        </a>
+                                    </div>
+                                    <!-- Contenido del Proyecto -->
+                                    <div class="col-md-8">
+                                        <div class="p-5">
+                                            <h2 class="fw-bolder text-center text-primary mb-4">{{ _('Dashboard Analítico Financiero') }}</h2>
+                                            <p>
+                                                {{ _('Este proyecto presenta un dashboard interactivo en Power BI que analiza operaciones financieras, incluyendo ingresos, gastos y márgenes de beneficio, utilizando datos reales extraídos de un dataset de Kaggle.') }}
+                                            </p>
+                                            <p>
+                                                {{ _('Descubre cómo las visualizaciones dinámicas y los análisis detallados pueden optimizar la toma de decisiones estratégicas para maximizar el rendimiento empresarial.') }}
+                                            </p>
+                                            <div class="text-center mt-4">
+                                                <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder justify-content-center" 
+                                                   href="{{ url_for('FinancialDashboard', lang=request.args.get('lang', 'es')) }}">
+                                                    {{ _('Ver Proyecto') }}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                                <div class="row g-0">
+                                    <!-- Imagen del Proyecto -->
+                                    <div class="col-md-4">
+                                        <a href="https://github.com/DavidZerpa96/RFM_model" target="_blank">
+                                            <img src="{{ url_for('static', filename='images/k-meansFrontPage.webp') }}" 
+                                                 class="img-fluid rounded-start" 
+                                                 alt="Modelo RFM con Machine Learning">
+                                        </a>
+                                    </div>
+                                    <!-- Contenido del Proyecto -->
+                                    <div class="col-md-8">
+                                        <div class="p-5">
+                                            <h2 class="fw-bolder text-center text-primary mb-4">{{ _('Modelo RFM y Machine Learning') }}</h2>
+                                            <p>
+                                                {{ _('Este proyecto presenta un modelo RFM implementado con Python para analizar el comportamiento de los clientes y segmentarlos según su recencia, frecuencia y valor monetario.') }}
+                                            </p>
+                                            <p>
+                                                {{ _('Integra técnicas avanzadas de Machine Learning para identificar patrones y optimizar estrategias de marketing, proporcionando insights accionables que mejoran la fidelización y el valor del cliente.') }}
+                                            </p>
+                                            <div class="text-center mt-4">
+                                                <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder justify-content-center" 
+                                                   href="https://github.com/DavidZerpa96/RFM_model" target="_blank">
+                                                    {{ _('Ver Proyecto') }}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                                                        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Call to action section-->
+            <section class="py-5 bg-gradient-primary-to-secondary text-white">
+                <div class="container text-center">
+                    <h2 class="display-4 fw-bolder">{{ _('Convierte tus datos en tu mejor aliado') }}</h2>
+                    <p class="text-center">{{ _('¿Listo para transformar tu negocio? Contáctame para crear soluciones personalizadas que impulsen tu negocio.') }}</p>
+                    <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="{{ url_for('contact', lang=request.args.get('lang', 'es')) }}">{{ _('Hablemos') }}</a>
+                </div>
+            </section>
+        </main>
+        <!-- Footer-->
+        <footer class="bg-white py-4 mt-auto">
+            <div class="px-5 footer-container">
+                <div class="footer-content d-flex justify-content-between align-items-center flex-column flex-sm-row">
+                    <div class="text text-start">
+                        <p class="mb-0 mb-1">
+                            {{ _('Sitio web diseñado y desarrollado por mi con') }} 
+                            <a href="https://flask.palletsprojects.com/" target="_blank" style="color: inherit; text-decoration: none;">
+                                Flask
+                            </a>
+                        </p>
+                        <p class="mb-0 text-muted">{{ _('David Zerpa') }} {{ current_year }}. &copy; </p>
+                    </div>
+                    <div class="mt-sm-0">
+                        <a class="icons text-primary text-decoration-none me-3 icon-hover" href="https://www.linkedin.com/in/davidzerpago" target="_blank" rel="noopener noreferrer" style="font-size: 2rem;">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a class="icons text-primary text-decoration-none me-3 icon-hover" href="https://github.com/DavidZerpa96" target="_blank" rel="noopener noreferrer" style="font-size: 2rem;">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a class="icons text-primary text-decoration-none icon-hover" href="{{ url_for('contact', lang=request.args.get('lang', 'en')) }}" rel="noopener noreferrer" style="font-size: 2rem;">
+                            <i class="bi bi-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>  
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

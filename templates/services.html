@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="{{ _('Servicios de Analytics Engineering: data pipelines (ETL/ELT), modelado semántico en Power BI y automatización de procesos con Python.') }}">
+        <meta name="keywords" content="Servicios, Analytics Engineering, data pipelines, ETL, ELT, Power BI, BigQuery, Python, SQL, automatización, integraciones">
+        <meta name="author" content="David Zerpa" />
+        <title>{{ _('Servicios') }}</title>
+        <!-- Custom Google font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/Icon.ico') }}" />
+    </head>
+    <body class="d-flex flex-column">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="{{ url_for('home', lang=request.args.get('lang', 'es')) }}"><span class="fw-bolder text-primary">{{ _('David Zerpa') }}</span></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ _('Toggle navigation') }}"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mt-2 mb-lg-0 small fw-bolder">
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('home', lang=request.args.get('lang', 'es')) }}">{{ _('INICIO') }}</a></li>
+                            <li class="nav-item"><a class="nav-link nav-item-selected" href="{{ url_for('services', lang=request.args.get('lang', 'es')) }}">{{ _('SERVICIOS') }}</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('resume', lang=request.args.get('lang', 'en')) }}">{{ _('CURRÍCULUM') }}</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('projects', lang=request.args.get('lang', 'es')) }}">{{ _('PROYECTOS') }}</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('contact', lang=request.args.get('lang', 'es')) }}">{{ _('CONTACTO') }}</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Storytelling Section -->
+            <section class="bg-white mt-5">
+                <div class="container">
+                    <div  class="row gx-5 justify-content-center">
+                        <div class="col-xxl-9 ">
+	                            <h1 class="display-3 fw-bold text-gradient mb-4 text-center">{{ _('Transforma tus datos en oportunidades') }}</h1>
+	                            <p class="fw-normal fs-5 mb-4">{{ _('Diseño e implemento soluciones de Analytics Engineering para conectar fuentes, construir data products y habilitar reporting confiable en entornos reales de operación.') }}</p>
+	                            <p class="fw-bold display-6 text-center">{{_('Menos trabajo manual y más decisiones con datos.')}} </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="py-5 bg-light">
+                <div class="container py-2">
+                    <div  class="row gx-5 justify-content-center">
+                        <div class="col-xxl-9 ">
+                            <ul class="text-primary fs-3 text-center list-unstyled card-small">
+                                <div class="card mb-5 px-5 py-4 shadow rounded-4 border-0">
+                                    <li class="mb-3 fs-3 text-primary"><i class="bi bi-check-circle text-primary fs-2 me-2"></i> {{ _('Decisiones más inteligentes') }}</li>
+                                </div>
+                                <div class="card mb-5 px-5 py-4 shadow rounded-4 border-0">
+                                    <li class="mb-3 fs-3 text-primary"><i class="bi bi-check-circle text-primary fs-2 me-2"></i> {{ _('Operaciones más eficientes') }}</li>
+                                </div>
+                                <div class="card mb-5 px-5 py-4 shadow rounded-4 border-0">
+                                    <li class="mb-3 fs-3 text-primary"><i class="bi bi-check-circle text-primary fs-2 me-2"></i> {{ _('Crecimiento sostenible y escalable') }}</li>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="py-2 bg-white mb-5">
+                <div class="container">
+                    <div  class="row gx-5 justify-content-center">
+                        <div class="col-xxl-9 ">
+                            <div class="py-3">
+                                <p class="text-primary text-black fs-1 mb-4 text-center">{{ _('¿Cómo te puedo ayudar?') }}</p>
+                                <p class="text-muted fs-5 mt-2 text-center ">{{_('Estos son los servicios que harán que tu negocio pase al <strong>siguiente nivel</strong>')}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Services Section -->
+            <section class="py-5 bg-light">
+                <div class="container py-5">
+                    <div  class="row gx-5 justify-content-center">
+                        <div class="col-xxl-9 ">
+	                            <!-- Service 1: ETL -->
+	                            <a href="{{ url_for('contact', lang=request.args.get('lang', 'es')) }}" class="text-decoration-none">
+	                                <div class="card mb-5 px-5 py-4 shadow rounded-4 border-0" style="color: #000;">
+	                                    <div class="row g-0">
+	                                        <div class="col-md-6">
+	                                            <div class="p-4">
+	                                                <h2 class="fw-bolder text-primary mb-3">{{ _('Data pipelines (ETL/ELT)') }}</h2>
+	                                                <p class="text-primary">{{ _('Ingesta, transformación y carga incremental para consolidar datos en un modelo analítico listo para BI y operación.') }}</p>
+	                                                <ul class="list-unstyled">
+	                                                    <li class="mb-3"><i class="bi bi-check-circle text-primary"></i> {{ _('ETLs incrementales con upserts e idempotencia.') }}</li>
+	                                                    <li class="mb-3"><i class="bi bi-check-circle text-primary"></i> {{ _('Consolidación de múltiples fuentes (APIs, DBs, exports).') }}</li>
+	                                                    <li class="mb-3"><i class="bi bi-check-circle text-primary"></i> {{ _('Validaciones, logging, alertas y reintentos.') }}</li>
+	                                                </ul>
+	                                            </div>
+	                                        </div>
+                                        <div class="col-md-6">
+                                            <img src="/static/images/etl.webp" class="img-fluid rounded-start" alt="Visual de procesos ETL">
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+	                            <!-- Service 2: Automatización -->
+	                            <a href="{{ url_for('contact', lang=request.args.get('lang', 'es')) }}" class="text-decoration-none">
+	                                <div class="card mb-5 px-5 py-4 shadow rounded-4 border-0" style="color: #000;">
+	                                    <div class="row g-0 align-items-center">
+	                                        <div class="col-md-6 ">
+	                                            <div class="p-4">
+	                                                <h2 class="fw-bolder text-primary mb-3">{{ _('Automatización e integraciones') }}</h2>
+	                                                <p class="text-primary">{{ _('Automatización de procesos operativos (CRM, portales, contact center) e integración por API para reducir fricción y errores humanos.') }}</p>
+	                                                <ul class="list-unstyled">
+	                                                    <li class="mb-3"><i class="bi bi-check-circle text-primary"></i> {{ _('Automatización end-to-end con reintentos por etapa.') }}</li>
+	                                                    <li class="mb-3"><i class="bi bi-check-circle text-primary"></i> {{ _('Extracción, limpieza y carga a bases analíticas.') }}</li>
+	                                                    <li class="mb-3"><i class="bi bi-check-circle text-primary"></i> {{ _('Alertas y métricas de ejecución para operación estable.') }}</li>
+	                                                </ul>
+	                                            </div>
+	                                        </div>
+                                        <div class="col-md-6 d-flex align-items-center justify-content-center">
+                                            <img src="/static/images/automatizacion.webp" class="img-fluid" alt="Visual de automatización">
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+	                            <!-- Service 3: Modelado / BI -->
+	                            <a href="{{ url_for('contact', lang=request.args.get('lang', 'es')) }}" class="text-decoration-none">
+	                                <div class="card mb-5 px-5 py-4 shadow rounded-4 border-0" style="color: #000;">
+	                                    <div class="row g-0">
+	                                        <div class="col-md-6">
+	                                            <div class="p-4">
+	                                                <h2 class="fw-bolder text-primary mb-3">{{ _('Power BI y modelado semántico') }}</h2>
+	                                                <p class="text-primary">{{ _('Modelos semánticos robustos, performance y gobernanza (DAX/M) para que el reporting escale sin degradarse.') }}</p>
+	                                                <ul class="list-unstyled">
+	                                                    <li class="mb-3"><i class="bi bi-check-circle text-primary"></i> {{ _('Optimización de modelos complejos y medidas costosas.') }}</li>
+	                                                    <li class="mb-3"><i class="bi bi-check-circle text-primary"></i> {{ _('Diseño de modelos orientados a autoservicio.') }}</li>
+	                                                    <li class="mb-3"><i class="bi bi-check-circle text-primary"></i> {{ _('Documentación y estándares para mantenimiento.') }}</li>
+	                                                </ul>
+	                                            </div>
+	                                        </div>
+                                        <div class="col-md-6">
+                                            <img src="/static/images/machine_learning.webp" class="img-fluid rounded-start" alt="Visual de machine learning">
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="py-5 bg-gradient-primary-to-secondary text-white">
+                <div class="container text-center">
+                    <h2 class="display-4 fw-bolder">{{ _('Convierte tus datos en tu mejor aliado') }}</h2>
+                    <p>{{ _('¿Listo para transformar tu negocio? Contáctame para crear soluciones personalizadas que impulsen tu negocio.') }}</p>
+                    <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="{{ url_for('contact', lang=request.args.get('lang', 'es')) }}">{{ _('Hablemos') }}</a>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-white py-4 mt-auto">
+            <div class="px-5 footer-container">
+                <div class="footer-content d-flex justify-content-between align-items-center flex-column flex-sm-row">
+                    <div class="text text-start">
+                        <p class="mb-0 mb-1">
+                            {{ _('Sitio web diseñado y desarrollado por mi con') }} 
+                            <a href="https://flask.palletsprojects.com/" target="_blank" style="color: inherit; text-decoration: none;">
+                                Flask
+                            </a>
+	                        </p>
+	                        <p class="mb-0 text-muted">{{ _('David Zerpa') }} {{ current_year }}. &copy; </p>
+	                    </div>
+	                    <div class="mt-sm-0">
+	                        <a class="icons text-primary text-decoration-none me-3 icon-hover" href="https://www.linkedin.com/in/davidzerpago" target="_blank" rel="noopener noreferrer" style="font-size: 2rem;">
+	                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a class="icons text-primary text-decoration-none me-3 icon-hover" href="https://github.com/DavidZerpa96" target="_blank" rel="noopener noreferrer" style="font-size: 2rem;">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a class="icons text-primary text-decoration-none icon-hover" href="{{ url_for('contact', lang=request.args.get('lang', 'en')) }}" rel="noopener noreferrer" style="font-size: 2rem;">
+                            <i class="bi bi-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer> 
+        <!-- Bootstrap core JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
+
+

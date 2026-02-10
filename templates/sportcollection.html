@@ -1,21 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="{{ _('Descubre cómo David Zerpa puede ayudarte a llevar tus proyectos al siguiente nivel con soluciones personalizadas de análisis de datos y automatización.') }}">
-        <meta name="keywords" content="Sport Collection, análisis de datos, ventas, inteligencia de negocios, pymes, Canarias, Power BI, automatización, deportes">
-        <meta name="author" content="David Zerpa" />
-        <title> {{_('Sport Collection - Dashboard')}}</title>
+	        <meta charset="utf-8" />
+	        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	        <meta name="description" content="Proyecto personal: dashboard financiero y logístico en Power BI para analizar margen, ventas e inventario (dataset ficticio)." />
+	        <meta name="keywords" content="Sport Collection, Power BI, DAX, modelo estrella, dashboard, inventario, logística, finanzas" />
+	        <meta name="author" content="David Zerpa" />
+	        <meta name="robots" content="index,follow" />
+	        <link rel="canonical" href="{{ request.base_url }}" />
+	        <meta property="og:locale" content="es_ES" />
+	        <meta property="og:type" content="website" />
+	        <meta property="og:site_name" content="David Zerpa" />
+	        <meta property="og:title" content="Sport Collection (Power BI) | David Zerpa" />
+	        <meta property="og:description" content="Dashboard en Power BI con modelado + medidas DAX para decisiones financieras y de inventario (dataset ficticio)." />
+	        <meta property="og:url" content="{{ request.base_url }}" />
+	        <meta property="og:image" content="{{ url_for('static', filename='images/SportCollections.webp', _external=True) }}" />
+	        <meta name="twitter:card" content="summary_large_image" />
+	        <meta name="twitter:title" content="Sport Collection (Power BI) | David Zerpa" />
+	        <meta name="twitter:description" content="Proyecto personal: KPIs de margen/ventas e inventario con navegación y análisis interactivo." />
+	        <meta name="twitter:image" content="{{ url_for('static', filename='images/SportCollections.webp', _external=True) }}" />
+	        <title>Sport Collection | David Zerpa</title>
         <!-- Google Font -->
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
         <!-- Bootstrap Icons -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core CSS -->
-        <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
-        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/Icon.ico') }}" />
-	    </head>
+	        <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+	        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+	        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/Icon.ico') }}" />
+	        <script type="application/ld+json">
+	        {
+	          "@context": "https://schema.org",
+	          "@type": "WebPage",
+	          "name": "Sport Collection | David Zerpa",
+	          "url": "{{ request.base_url }}",
+	          "inLanguage": "es-ES"
+	        }
+	        </script>
+		    </head>
     <body class="d-flex flex-column">
         <main class="flex-shrink-0">
             <!-- Navigation-->
@@ -35,13 +57,21 @@
                     </div>
                 </div>
             </nav>
-        <!-- Header -->
-        <header class="py-5 bg-light text-center">
-            <div class="container">
-                <h1 class="fw-bold display-1 text-primary">{{ _('Análisis Financiero y Logístico de una Tienda de Deporte') }}</h1>
-                <p class="text-muted lead">{{ _('Un completo dashboard interactivo de Power BI diseñado para optimizar las operaciones financieras y logísticas de una tienda de deporte ficticia, impulsando decisiones estratégicas basadas en datos.') }}</p>
-            </div>
-        </header>
+	        <!-- Header -->
+	        <header class="py-5 bg-light">
+	            <div class="container">
+	                <div class="text-center">
+	                    <h1 class="fw-bold text-primary display-5 mb-2">Sport Collection (Power BI)</h1>
+	                    <p class="text-muted lead mb-0">Dashboard financiero y logístico (dataset ficticio) para entender margen, rotación e inventario sin perderse en tablas.</p>
+	                </div>
+	                <div class="d-flex flex-wrap gap-2 justify-content-center mt-4">
+	                    <span class="badge bg-light text-dark border">Power BI</span>
+	                    <span class="badge bg-light text-dark border">DAX</span>
+	                    <span class="badge bg-light text-dark border">Modelado</span>
+	                    <span class="badge bg-light text-dark border">Synoptic Panel</span>
+	                </div>
+	            </div>
+	        </header>
         
         <!-- Dashboard Section -->
         <section class="py-5 bg-white">
@@ -54,131 +84,71 @@
             </div>
         </section>
         
-        <!-- Project Details Section -->
-        <section class="py-5 bg-light">
-            <div class="container">
-                <h2 class="display-3 fw-bolder mb-2 text-center"><span class="text-gradient d-inline">{{ _('Detalles del Proyecto') }}</span></h2>
-                <h3 class="mt-4 fw-bold text-primary">{{ _('Resumen del Proyecto') }}</h3>
-                <p><strong>{{ _('Análisis Financiero y Logístico para Sport Collection') }}</strong> {{ _('es un proyecto que utiliza Power BI para abordar desafíos clave en la gestión de inventarios y el análisis financiero en una tienda deportiva ficticia.') }}</p>
-                <p>{{ _('El dashboard permite monitorear métricas críticas como ingresos, costos, márgenes y rotación de inventarios, facilitando comparaciones detalladas entre los objetivos presupuestados y el desempeño real.') }}</p>
-                <p>{{ _('Con un diseño intuitivo, los usuarios pueden analizar tendencias, filtrar información por categoría de producto o marca y profundizar en áreas específicas para identificar oportunidades de mejora.') }}</p>
-                <p>{{ _('Además, el proyecto incorpora un mapa interactivo del almacén que optimiza la localización de productos, visualiza la ocupación de espacios y mejora los procesos logísticos.') }}</p>
-                <p>{{ _('Apoyado en un sólido modelo de datos, este proyecto combina herramientas avanzadas como') }} <strong>{{ _('DAX y Synoptic Panel') }}</strong> {{ _('para transformar datos complejos en información procesable, permitiendo decisiones estratégicas basadas en datos confiables.') }}</p>
-                <h3 class="mt-4 fw-bold text-primary">{{ _('Objetivos Principales') }}</h3>
-                <ol class="list-group list-group-numbered mb- mt-1">
-                    <li class="list-group-item mb-2"><strong>{{ _('Optimizar la Gestión Financiera') }}:</strong> {{ _('Proveer análisis detallados de ingresos, costos y márgenes, ayudando a tomar decisiones estratégicas informadas.') }}</li>
-                    <li class="list-group-item mb-2"><strong>{{ _('Mejorar la Logística de Inventarios') }}:</strong> {{ _('Permitir un control eficiente de productos, optimizando la gestión de inventarios y reduciendo costos operativos.') }}</li>
-                    <li class="list-group-item mb-2"><strong>{{ _('Incrementar la Eficiencia Operativa') }}:</strong> {{ _('Detectar ineficiencias y tendencias en el rendimiento de ventas para implementar mejoras en tiempo real.') }}</li>
-                </ol>
-                <h3 class="mt-4 fw-bold text-primary">{{ _('Modelo de Datos') }}</h3>
-                <p class="mt-3 mb-2 ms-n1">{{ _('El proyecto se basa en un modelo de datos diseñado para maximizar la escalabilidad y eficiencia analítica. Elementos clave del modelo incluyen:') }}</p>
-                <ul class="mt-1 ps-4 list-group">
-                    <li class="mb-3 list-group-item"><strong>{{ _('Productos') }}:</strong> {{ _('Información detallada de categorías, marcas, costos y precios.') }}</li>
-                    <li class="mb-3 list-group-item"><strong>{{ _('Ventas') }}:</strong> {{ _('Registros históricos de ventas, incluyendo unidades vendidas e ingresos generados.') }}</li>
-                    <li class="mb-3 list-group-item"><strong>{{ _('Empleados') }}:</strong> {{ _('Datos sobre representantes de ventas y su rendimiento.') }}</li>
-                    <li class="mb-3 list-group-item"><strong>{{ _('Almacén') }}:</strong> {{ _('Detalles sobre la ubicación de los productos para una gestión eficiente.') }}</li>
-                    <li class="mb-3 list-group-item"><strong>{{ _('Calendario') }}:</strong> {{ _('Tabla de fechas utilizada para análisis temporales.') }}</li>
-                    <li class="mb-3 list-group-item"><strong>{{ _('Presupuesto') }}:</strong> {{ _('Metas mensuales de ventas por producto para medir el cumplimiento de objetivos.') }}</li>
-                </ul>
-                <p class="mt-3 mb-2 ms-n1">{{ _('El modelo sigue un') }} <strong>{{ _('esquema estrella') }}</strong> {{ _('que garantiza consultas eficientes y permite la creación de medidas DAX avanzadas para análisis profundo.') }}</p>
-                <h3 class="mt-4 fw-bold text-primary">{{ _('Tecnologías y Herramientas Utilizadas') }}</h3>
-                <ul class="mt-1 ps-4 list-group">
-                    <li class="mb-3 list-group-item"><strong>{{ _('Power BI') }}:</strong> {{ _('Para la creación del dashboard interactivo y visualizaciones personalizadas.') }}</li>
-                    <li class="mb-3 list-group-item"><strong>{{ _('Synoptic Panel') }}:</strong> {{ _('Para la representación visual del mapa del almacén.') }}</li>
-                    <li class="mb-3 list-group-item"><strong>{{ _('Excel') }}:</strong> {{ _('Para generar datasets realistas que simulan escenarios comerciales.') }}</li>
-                    <li class="mb-3 list-group-item"><strong>{{ _('ChatGPT') }}:</strong> {{ _('Como apoyo en la conceptualización y diseño inicial del proyecto.') }}</li>
-                </ul>
-            </div>
-        </section>               
-        <!-- Key Features Section -->
-    <section class="py-5 bg-white">
-        <div class="container">
-            <h2 class="display-3 fw-bolder mb-2 text-center"><span class="text-gradient d-inline">{{ _('Características Clave') }}</span></h2>
-            <p class="mt-3">{{ _('El dashboard está dividido en dos secciones principales, cada una diseñada para satisfacer necesidades específicas del negocio.') }}</p>
-            <ol class="list-group list-group-numbered mt-3">
-                <li class="list-group-item mb-5"><strong>{{ _('Visión General del Desempeño') }}</strong>
-                    <ul class="list-group mb-2 mt-1">
-                        <li class="ms-4 mb-1"><strong>{{ _('Propósito') }}:</strong> {{ _('Proveer una vista general del desempeño de la tienda durante 2023 y 2024 (hasta septiembre).') }}</li>
-                        <li class="ms-4 mb-1"><strong>{{ _('Características Clave') }}:</strong>
-                            <ul>
-                                <li class="ms-4 mb-1">{{ _('Análisis comparativo de ingresos, costos, márgenes y ventas.') }}</li>
-                                <li class="ms-4 mb-1">{{ _('Evaluación del desempeño en comparación con objetivos presupuestados y años previos.') }}</li>
-                                <li class="ms-4 mb-1">{{ _('Panel dinámico para alternar entre métricas clave y enfocarse en áreas específicas.') }}</li>
-                                <li class="ms-4 mb-1">{{ _('Desglose del desempeño por categoría de producto, marca o representante de ventas para un análisis detallado.') }}</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li class="list-group-item mb-5"><strong>{{ _('Gestión del Almacén') }}</strong>
-                    <ul class="list-group mb-2 mt-1">
-                        <li class="ms-4 mb-1"><strong>{{ _('Propósito') }}:</strong> {{ _('Optimizar la gestión de inventarios y mejorar la localización de productos dentro del almacén.') }}</li>
-                        <li class="ms-4 mb-1"><strong>{{ _('Características Clave') }}:</strong>
-                            <ul>
-                                <li class="ms-4 mb-1"><strong>{{ _('Mapa interactivo del almacén') }}:</strong> {{ _('Construido con Synoptic Panel, muestra secciones, estantes y espacios ocupados.') }}</li>
-                                <li class="ms-4 mb-1">{{ _('Visualización en tiempo real de la ocupación del almacén, codificada por colores para identificar áreas subutilizadas o sobrecargadas.') }}</li>
-                                <li class="ms-4 mb-1">{{ _('Filtros interactivos para buscar productos por nombre, categoría, marca, tamaño o ubicación exacta.') }}</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ol>
-        </div>
-    </section>
+	        <!-- Summary -->
+	        <section class="py-5 bg-light">
+	            <div class="container">
+	                <div class="row g-4">
+	                    <div class="col-12 col-lg-4">
+	                        <div class="card h-100 shadow-sm border-0 rounded-4">
+	                            <div class="card-body p-4">
+	                                <div class="fw-bolder text-primary mb-2">Contexto</div>
+	                                <p class="text-muted mb-0">Unificar visión financiera e inventario: margen, rotación, cumplimiento vs presupuesto y eficiencia logística.</p>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="col-12 col-lg-4">
+	                        <div class="card h-100 shadow-sm border-0 rounded-4">
+	                            <div class="card-body p-4">
+	                                <div class="fw-bolder text-primary mb-2">Qué construí</div>
+	                                <p class="text-muted mb-0">Modelo de datos + medidas DAX y navegación para explorar KPIs por categoría, marca, empleado y periodo.</p>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="col-12 col-lg-4">
+	                        <div class="card h-100 shadow-sm border-0 rounded-4">
+	                            <div class="card-body p-4">
+	                                <div class="fw-bolder text-primary mb-2">Valor aportado</div>
+	                                <ul class="text-muted mb-0 ps-3">
+	                                    <li>Lectura rápida de margen, ingresos y costes (con comparativas).</li>
+	                                    <li>Identificación de palancas: productos/categorías que explican el resultado.</li>
+	                                    <li>Mapa de almacén (Synoptic) para apoyar decisiones logísticas.</li>
+	                                </ul>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
 
-    <!-- How it Works Section -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <h2 class="display-3 fw-bolder mb-2 text-center"><span class="text-gradient d-inline">{{ _('Cómo Funciona') }}</span></h2>
-            <p class="mt-3">{{ _('Este dashboard ha sido diseñado para ser intuitivo y fácil de usar, ofreciendo una experiencia fluida para gerentes y empleados. A continuación, sus principales funcionalidades:') }}</p>
-            <ol class="list-group list-group-numbered mt-3">
-                <li class="list-group-item mb-3"><strong>{{ _('Visión General del Desempeño') }}</strong>
-                    <ul>
-                        <li class="mb-2 mt-2">{{ _('Resumen de métricas clave como ingresos, costos, márgenes y volumen de ventas.') }}</li>
-                        <li class="mb-2">{{ _('Gráfico acumulado de desempeño mensual para 2023 y 2024.') }}</li>
-                        <li class="mb-2">{{ _('Panel de dimensiones dinámico para personalizar el análisis según prioridades del negocio.') }}</li>
-                    </ul>
-                </li>
-                <li class="list-group-item mb-3"><strong>{{ _('Análisis Detallado') }}</strong>
-                    <ul>
-                        <li class="mb-2 mt-2">{{ _('Drill-through para explorar datos específicos directamente desde gráficos o tablas.') }}</li>
-                        <li class="mb-2">{{ _('Por ejemplo, al seleccionar un empleado, se detalla su rendimiento por producto o marca.') }}</li>
-                    </ul>
-                </li>
-                <li class="list-group-item mb-3"><strong>{{ _('Filtros Interactivos') }}</strong>
-                    <ul>
-                        <li class="mb-2 mt-2">{{ _('Filtros avanzados para refinar el análisis según nombre del producto, categoría, marca, rango de fechas o empleado.') }}</li>
-                    </ul>
-                </li>
-                <li class="list-group-item mb-3"><strong>{{ _('Gestión del Almacén') }}</strong>
-                    <ul>
-                        <li class="mb-2 mt-2">{{ _('Mapa interactivo con estantes y espacios codificados por colores para mostrar ocupación y disponibilidad.') }}</li>
-                        <li class="mb-2">{{ _('Búsqueda directa de productos y localización rápida en el mapa.') }}</li>
-                    </ul>
-                </li>
-            </ol>
-        </div>
-    </section>
-
-    <!-- Impact Section -->
-    <section class="py-5 bg-white">
-        <div class="container">
-            <h2 class="display-3 fw-bolder mb-2 text-center"><span class="text-gradient d-inline">{{ _('Impacto Empresarial') }}</span></h2>
-            <p class="mt-3">{{ _('Este dashboard integral aborda desafíos operativos y estratégicos clave para optimizar la tienda. Entre los impactos destacan:') }}</p>
-            <ol class="list-group list-group-numbered mt-3">
-                <li class="list-group-item mb-3"><strong>{{ _('Gestión de Inventarios') }}</strong>
-                    <ul>
-                        <li class="mb-2 mt-2">{{ _('El mapa del almacén reduce tiempos de búsqueda y mejora la eficiencia operativa.') }}</li>
-                        <li class="mb-2">{{ _('Identificación clara de espacios infrautilizados o sobrecargados.') }}</li>
-                    </ul>
-                </li>
-                <li class="list-group-item mb-3"><strong>{{ _('Toma de Decisiones Basadas en Datos') }}</strong>
-                    <ul>
-                        <li class="mb-2 mt-2">{{ _('Análisis detallados de ingresos, costos y márgenes para ajustar estrategias en tiempo real.') }}</li>
-                    </ul>
-                </li>
-            </ol>
-        </div>
-    </section>
+	                <div class="accordion mt-5" id="sportDetails">
+	                    <div class="accordion-item">
+	                        <h2 class="accordion-header" id="sportDetailsHeading">
+	                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sportDetailsCollapse" aria-expanded="false" aria-controls="sportDetailsCollapse">
+	                                Ver detalles técnicos (opcional)
+	                            </button>
+	                        </h2>
+	                        <div id="sportDetailsCollapse" class="accordion-collapse collapse" aria-labelledby="sportDetailsHeading" data-bs-parent="#sportDetails">
+	                            <div class="accordion-body text-muted">
+	                                <ul class="mb-0 ps-3">
+	                                    <li>Modelo en esquema estrella (hechos de ventas + dimensiones: productos, calendario, empleados, presupuesto).</li>
+	                                    <li>Medidas DAX para KPIs, comparativas y navegación.</li>
+	                                    <li>Mapa de almacén con Synoptic Panel para localización/ocupación.</li>
+	                                </ul>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </section>
+	    <!-- Notes -->
+	    <section class="py-5 bg-white">
+	        <div class="container">
+	            <div class="card shadow-sm border-0 rounded-4">
+	                <div class="card-body p-4">
+	                    <div class="fw-bolder text-primary mb-2">Nota</div>
+	                    <p class="text-muted mb-0">Dataset ficticio. El foco está en modelado, DAX, diseño de navegación y comunicación visual para decisiones operativas.</p>
+	                </div>
+	            </div>
+	        </div>
+	    </section>
     </main>
     <section class="py-5 bg-gradient-primary-to-secondary text-white">
         <div class="container text-center">

@@ -1,20 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Dashboard Analítico Financiero desarrollado en Power BI con más de 25 medidas DAX avanzadas para análisis de ingresos, costos y márgenes." />
-        <meta name="author" content="David Zerpa" />
-        <title> {{ _('Dashboard Financiero') }}</title>
+	        <meta charset="utf-8" />
+	        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	        <meta name="description" content="Proyecto personal: dashboard financiero en Power BI con medidas DAX para analizar ingresos, costos y márgenes (dataset sintético)." />
+	        <meta name="keywords" content="Power BI, DAX, dashboard financiero, ingresos, costos, margen, KPIs" />
+	        <meta name="author" content="David Zerpa" />
+	        <meta name="robots" content="index,follow" />
+	        <link rel="canonical" href="{{ request.base_url }}" />
+	        <meta property="og:locale" content="es_ES" />
+	        <meta property="og:type" content="website" />
+	        <meta property="og:site_name" content="David Zerpa" />
+	        <meta property="og:title" content="Dashboard financiero (Power BI) | David Zerpa" />
+	        <meta property="og:description" content="Dashboard en Power BI con DAX para descomponer rentabilidad y comparar periodos/presupuesto (dataset sintético)." />
+	        <meta property="og:url" content="{{ request.base_url }}" />
+	        <meta property="og:image" content="{{ url_for('static', filename='images/FinancialFrontPage.webp', _external=True) }}" />
+	        <meta name="twitter:card" content="summary_large_image" />
+	        <meta name="twitter:title" content="Dashboard financiero (Power BI) | David Zerpa" />
+	        <meta name="twitter:description" content="Proyecto personal: KPIs financieros y comparativas con medidas DAX avanzadas." />
+	        <meta name="twitter:image" content="{{ url_for('static', filename='images/FinancialFrontPage.webp', _external=True) }}" />
+	        <title>Dashboard financiero | David Zerpa</title>
         <!-- Google Font -->
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
         <!-- Bootstrap Icons -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core CSS -->
-        <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
-        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/Icon.ico') }}" />
-    </head>
+	        <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+	        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+	        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/Icon.ico') }}" />
+	        <script type="application/ld+json">
+	        {
+	          "@context": "https://schema.org",
+	          "@type": "WebPage",
+	          "name": "Dashboard financiero | David Zerpa",
+	          "url": "{{ request.base_url }}",
+	          "inLanguage": "es-ES"
+	        }
+	        </script>
+	    </head>
     <body class="d-flex flex-column">
         <main class="flex-shrink-0">
             <!-- Navigation -->
@@ -51,107 +74,60 @@
                     </div>
                 </div>
             </section>
-            <!-- Project Details Section -->
-            <section class="py-5 bg-light">
-                <div class="container">
-                    <h2 class="display-3 fw-bolder mb-2 text-center">
-                        <span class="text-gradient d-inline">{{ _('Detalles del Proyecto') }}</span>
-                    </h2>
-                    <h3 class="mt-4 fw-bold text-primary">{{ _('Objetivo Principal') }}</h3>
-                    <p>{{ _('Este proyecto busca proporcionar una herramienta avanzada para analizar métricas financieras clave como ingresos, costos, márgenes y cumplimiento presupuestario. Está diseñado para facilitar decisiones estratégicas basadas en datos confiables.') }}</p>
-                    <h3 class="mt-4 fw-bold text-primary">{{ _('Tecnologías y Herramientas') }}</h3>
-                    <ul>
-                        <li class="mb-3 list-group-item"><strong>{{ _('Power BI:') }}</strong> {{ _('Creación de dashboards interactivos y desarrollo de medidas DAX avanzadas.') }}</li>
-                        <li class="mb-3 list-group-item"><strong>{{ _('Excel:') }}</strong> {{ _('Generación de datasets sintéticos para simulación y análisis.') }}</li>
-                        <li class="mb-3 list-group-item"><strong>{{ _('Python:') }}</strong> {{ _('Limpieza y preprocesamiento de datos financieros.') }}</li>
-                    </ul>
-                </div>
-            </section>
-            <!-- Impact Section -->
-            <section class="py-5 bg-white">
-                <div class="container">
-                    <h2 class="display-3 fw-bolder mb-2 text-center">
-                        <span class="text-gradient d-inline">{{ _('Impacto Empresarial') }}</span>
-                    </h2>
-                    <p class="mt-3">{{ _('El dashboard proporciona un análisis financiero profundo, permitiendo a las empresas identificar áreas de mejora, optimizar la asignación de recursos y maximizar la rentabilidad.') }}</p>
-                    <ol class="list-group list-group-numbered mt-3">
-                        <li class="list-group-item mb-3"> <strong>{{ _('Toma de Decisiones Basada en Datos') }}</strong>
-                            <ul class="mb-2">
-                                <li class="mb-2 mt-2">{{ _('Análisis detallado de ingresos, costos y márgenes para ajustar estrategias en tiempo real.') }}</li>
-                                <li class="mb-2">{{ _('Comparación de desempeño real vs. presupuestado para identificar desviaciones y tomar medidas correctivas.') }}</li>
-                            </ul>
-                        </li>
-                        <li class="list-group-item mb-3"> <strong>{{ _('Optimización de Recursos') }}</strong>
-                            <ul class="mb-2">
-                                <li class="mb-2 mt-2">{{ _('Identificación de áreas de alto costo y su impacto en los márgenes de ganancia.') }}</li>
-                                <li class="mb-2">{{ _('Distribución eficiente de recursos basada en métricas financieras clave.') }}</li>
-                            </ul>
-                        </li>
-                        <li class="list-group-item mb-3"> <strong>{{ _('Visualización Clara y Precisa') }}</strong>
-                            <ul class="mb-2">
-                                <li class="mb-2 mt-2">{{ _('Gráficos interactivos que facilitan la comprensión de tendencias financieras.') }}</li>
-                                <li class="mb-2">{{ _('Paneles intuitivos para el seguimiento continuo de métricas críticas.') }}</li>
-                            </ul>
-                        </li>
-                    </ol>
-                </div>
-            </section>
-            <!-- Key Features Section -->
-            <section class="py-5 bg-light">
-                <div class="container">
-                    <h2 class="display-3 fw-bolder mb-2 text-center">
-                        <span class="text-gradient d-inline">{{ _('Características Clave del Dashboard') }}</span>
-                    </h2>
-                    <ul class="list-group mt-3">
-                        <li class="list-group-item"> <strong>{{ _('Análisis Dinámico:') }}</strong> {{ _('Explora métricas clave con gráficos interactivos que permiten una comprensión profunda de ingresos, costos y márgenes.') }}</li>
-                        <li class="list-group-item"> <strong>{{ _('Comparación de Periodos:') }}</strong> {{ _('Evalúa el rendimiento financiero entre años, trimestres o meses específicos.') }}</li>
-                        <li class="list-group-item"> <strong>{{ _('Indicadores Personalizados:') }}</strong> {{ _('Incluye más de 25 medidas DAX para calcular KPIs específicos como desviaciones presupuestarias y márgenes de ganancia bruta.') }}</li>
-                    </ul>
-                </div>
-            </section>
+	            <!-- Summary -->
+	            <section class="py-5 bg-light">
+	                <div class="container">
+	                    <div class="row g-4">
+	                        <div class="col-12 col-lg-4">
+	                            <div class="card h-100 shadow-sm border-0 rounded-4">
+	                                <div class="card-body p-4">
+	                                    <div class="fw-bolder text-primary mb-2">Contexto</div>
+	                                    <p class="text-muted mb-0">Entender rentabilidad sin hojas manuales: ingresos, costos, margen y desvíos vs presupuesto.</p>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="col-12 col-lg-4">
+	                            <div class="card h-100 shadow-sm border-0 rounded-4">
+	                                <div class="card-body p-4">
+	                                    <div class="fw-bolder text-primary mb-2">Qué construí</div>
+	                                    <p class="text-muted mb-0">Un dashboard en Power BI con KPIs y medidas DAX para descomponer resultados por periodo y segmento.</p>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="col-12 col-lg-4">
+	                            <div class="card h-100 shadow-sm border-0 rounded-4">
+	                                <div class="card-body p-4">
+	                                    <div class="fw-bolder text-primary mb-2">Valor aportado</div>
+	                                    <ul class="text-muted mb-0 ps-3">
+	                                        <li>Lectura rápida de KPIs financieros y tendencias.</li>
+	                                        <li>Comparativas por periodo y análisis de desviaciones.</li>
+	                                        <li>Base para estandarizar reporting financiero.</li>
+	                                    </ul>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
 
-            <!-- Use Cases Section -->
-            <section class="py-5 bg-white">
-                <div class="container">
-                    <h2 class="display-3 fw-bolder mb-2 text-center">
-                        <span class="text-gradient d-inline">{{ _('Casos de Uso') }}</span>
-                    </h2>
-                    <p class="mt-3">{{ _('Este dashboard está diseñado para satisfacer las necesidades de diferentes roles empresariales:') }}</p>
-                    <ul class="list-group mt-3">
-                        <li class="list-group-item"> <strong>{{ _('Gerentes Financieros:') }}</strong> {{ _('Monitorean métricas clave como ingresos y costos para tomar decisiones estratégicas informadas.') }}</li>
-                        <li class="list-group-item"> <strong>{{ _('Analistas de Negocio:') }}</strong> {{ _('Utilizan los insights del dashboard para identificar áreas de mejora y proponer soluciones.') }}</li>
-                        <li class="list-group-item"> <strong>{{ _('Equipos de Operaciones:') }}</strong> {{ _('Evalúan los datos en tiempo real para optimizar recursos y procesos financieros.') }}</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Future Improvements Section -->
-            <section class="py-5 bg-light">
-                <div class="container">
-                    <h2 class="display-3 fw-bolder mb-2 text-center">
-                        <span class="text-gradient d-inline">{{ _('Mejoras Futuras') }}</span>
-                    </h2>
-                    <p class="mt-3">{{ _('El dashboard se puede expandir para incluir funcionalidades adicionales, como:') }}</p>
-                    <ul class="list-group mt-3">
-                        <li class="list-group-item"> <strong>{{ _('Automatización de Datos en Tiempo Real:') }}</strong> {{ _('Conexión directa a sistemas ERP para actualizaciones automáticas.') }}</li>
-                        <li class="list-group-item"> <strong>{{ _('Predicciones Financieras:') }}</strong> {{ _('Uso de modelos de machine learning para prever ingresos y costos futuros.') }}</li>
-                        <li class="list-group-item"> <strong>{{ _('Análisis de Escenarios:') }}</strong> {{ _('Simulaciones de diferentes escenarios financieros para planificación estratégica.') }}</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Conclusion Section -->
-            <section class="py-5 bg-white">
-                <div class="container">
-                    <h2 class="display-3 fw-bolder mb-2 text-center">
-                        <span class="text-gradient d-inline">{{ _('Conclusión') }}</span>
-                    </h2>
-                    <div class="card overflow-hidden shadow rounded-4 border-0 px-2 py-2">
-                        <p class="mb-4 mt-4 ms-4 me-4">{{ _('Este Dashboard Analítico Financiero demuestra cómo una herramienta basada en datos puede transformar la gestión empresarial al proporcionar insights claros y procesables. Su diseño intuitivo y las medidas DAX avanzadas permiten a los usuarios tomar decisiones estratégicas con confianza, optimizando tanto los recursos como el rendimiento financiero.') }}</p>
-                        <p class="mb-4 ms-4 me-4">{{ _('Con la integración de mejoras futuras, este dashboard tiene el potencial de evolucionar hacia una solución completa para monitoreo y planificación financiera en tiempo real, ampliando su impacto en las empresas.') }}</p>
-                    </div>
-                </div>
-            </section>
+	                    <div class="accordion mt-5" id="finDetails">
+	                        <div class="accordion-item">
+	                            <h2 class="accordion-header" id="finDetailsHeading">
+	                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#finDetailsCollapse" aria-expanded="false" aria-controls="finDetailsCollapse">
+	                                    Ver detalles técnicos (opcional)
+	                                </button>
+	                            </h2>
+	                            <div id="finDetailsCollapse" class="accordion-collapse collapse" aria-labelledby="finDetailsHeading" data-bs-parent="#finDetails">
+	                                <div class="accordion-body text-muted">
+	                                    <ul class="mb-0 ps-3">
+	                                        <li>Más de 25 medidas DAX (KPIs, comparativas y desviaciones).</li>
+	                                        <li>Dataset sintético (Excel) + limpieza/preprocesamiento con Python.</li>
+	                                        <li>Foco en modelado y comunicación visual de resultados.</li>
+	                                    </ul>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </section>
 
             <!-- Call to Action Section -->
             <section class="py-5 bg-gradient-primary-to-secondary text-white">

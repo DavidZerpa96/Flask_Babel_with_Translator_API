@@ -11974,6 +11974,11 @@ html, body {
   margin-bottom: 0.55rem;
 }
 
+/* Project detail pages */
+.accordion-button {
+  font-weight: 700;
+}
+
 .card img {
   max-width: 100%;
   height: auto;

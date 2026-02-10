@@ -8,16 +8,7 @@ from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import mm
-from reportlab.platypus import (
-    SimpleDocTemplate,
-    Spacer,
-    Paragraph,
-    Table,
-    TableStyle,
-    ListFlowable,
-    ListItem,
-    PageBreak,
-)
+from reportlab.platypus import SimpleDocTemplate, Spacer, Paragraph, ListFlowable, ListItem, PageBreak
 
 
 @dataclass(frozen=True)
@@ -33,15 +24,6 @@ class CVConfig:
     linkedin: str
     github: str
     location: str
-
-
-def _footer(canvas, doc, cfg: CVConfig) -> None:
-    canvas.saveState()
-    canvas.setFont("Helvetica", 9)
-    canvas.setFillColor(colors.grey)
-    canvas.drawString(doc.leftMargin, 12 * mm, f"Actualizado: {cfg.updated_on}")
-    canvas.drawRightString(doc.pagesize[0] - doc.rightMargin, 12 * mm, f"Página {doc.page}")
-    canvas.restoreState()
 
 
 def build_cv_es(cfg: CVConfig) -> None:
@@ -137,43 +119,24 @@ def build_cv_es(cfg: CVConfig) -> None:
 
     story: list = []
 
-    # Header (2 columns): name/headline + contact
-    left = [
-        Paragraph(cfg.name, s_title),
-        Paragraph(cfg.headline, s_headline),
-    ]
-    right_lines = [
-        f"<b>Ubicación:</b> {cfg.location}",
-        f"<b>Email:</b> {cfg.email}",
-        f"<b>Web:</b> {cfg.website}",
-        f"<b>LinkedIn:</b> {cfg.linkedin}",
-        f"<b>GitHub:</b> {cfg.github}",
-    ]
-    right = [Paragraph(x, s_contact) for x in right_lines]
-
-    header = Table(
-        [[left, right]],
-        colWidths=[115 * mm, None],
-        style=TableStyle(
-            [
-                ("VALIGN", (0, 0), (-1, -1), "TOP"),
-                ("LEFTPADDING", (0, 0), (-1, -1), 0),
-                ("RIGHTPADDING", (0, 0), (-1, -1), 0),
-                ("TOPPADDING", (0, 0), (-1, -1), 0),
-                ("BOTTOMPADDING", (0, 0), (-1, -1), 0),
-            ]
-        ),
+    # ATS-friendly header: single column, no tables.
+    story.append(Paragraph(cfg.name, s_title))
+    story.append(Paragraph(cfg.headline, s_headline))
+    story.append(
+        Paragraph(
+            f"{cfg.location} | {cfg.email} | {cfg.website} | {cfg.linkedin} | {cfg.github}",
+            s_contact,
+        )
     )
-    story.append(header)
-    story.append(Spacer(1, 2 * mm))
+    story.append(Spacer(1, 3 * mm))
 
     # Summary
-    story.append(Paragraph("PERFIL", s_section))
+    story.append(Paragraph("RESUMEN PROFESIONAL", s_section))
     story.append(
         Paragraph(
             "Analytics Engineer especializado en convertir procesos manuales y datos dispersos en sistemas analíticos escalables. "
-            "Diseño y opero pipelines (API/DB -&gt; BigQuery/MySQL -&gt; capa semántica -&gt; reporting), optimizo modelos de Power BI "
-            "y automatizo procesos críticos con foco en fiabilidad, calidad y rendimiento.",
+            "Diseño y opero pipelines (API/BD a BigQuery/MySQL a capa semántica a reporting), construyo modelos semánticos en Power BI "
+            "y automatizo procesos críticos con Python, n8n y Make con foco en fiabilidad, calidad y rendimiento.",
             s_body,
         )
     )
@@ -183,7 +146,7 @@ def build_cv_es(cfg: CVConfig) -> None:
     story.append(Paragraph("EXPERIENCIA", s_section))
 
     story.append(Paragraph("Becall | Analytics Engineer", s_job))
-    story.append(Paragraph("España | Ene 2025 - Presente", s_meta))
+    story.append(Paragraph("España | 01/2025 - Presente", s_meta))
     story.append(
         Paragraph(
             "Diseño y opero data pipelines, construyo modelos semánticos en Power BI (DAX/M) e implemento automatizaciones operativas "
@@ -196,9 +159,10 @@ def build_cv_es(cfg: CVConfig) -> None:
     story.append(
         bullets(
             [
-                "<b>CRM:</b> de ejecuciones inestables (~30%) a ~90-95% con SSO + OTP, validaciones, reintentos y alertas; ~1000-2000 registros/día.",
+                "<b>CRM:</b> de ejecuciones inestables (aprox. 30%) a aprox. 90-95% con SSO + OTP, validaciones, reintentos y alertas; aprox. 1000-2000 registros/día.",
                 "<b>Power BI:</b> diseño y evolución de un modelo semántico complejo (múltiples fuentes + lógica de negocio), hasta <b>347 medidas</b> y <b>89 relaciones</b>.",
                 "<b>BigQuery:</b> data products con capa de vistas para consolidar cientos de tablas heterogéneas y escalar consumo analítico.",
+                "<b>Automatización:</b> workflows con Python + n8n/Make; integración por APIs, scheduling y reporting de ejecución.",
                 "<b>Operación:</b> integraciones con plataformas de contact center y utilidades DNC (compliance) para reducir fricción operativa.",
             ]
         )
@@ -231,14 +195,14 @@ def build_cv_es(cfg: CVConfig) -> None:
     story.append(PageBreak())
 
     # Skills
-    story.append(Paragraph("STACK TÉCNICO", s_section))
+    story.append(Paragraph("HABILIDADES (SKILLS)", s_section))
     story.append(
         bullets(
             [
                 "<b>Lenguajes:</b> Python, SQL, DAX, Power Query (M).",
                 "<b>Datos:</b> BigQuery, MySQL; diseño de vistas/capas analíticas; incrementalidad y upserts.",
                 "<b>BI:</b> Power BI (modelado semántico, performance, gobernanza).",
-                "<b>Automatización:</b> Playwright, Selenium; integración de APIs; scheduling.",
+                "<b>Automatización:</b> Python, n8n, Make; Playwright, Selenium; integración de APIs; scheduling.",
                 "<b>Buenas prácticas:</b> idempotencia, retries/backoff, logging, alertas, data quality y reconciliación.",
             ]
         )
@@ -252,7 +216,7 @@ def build_cv_es(cfg: CVConfig) -> None:
                 "Optimización de modelos Power BI complejos: reducción de cálculos costosos y mejora de mantenibilidad sin afectar producción.",
                 "Consolidación de leads en BigQuery: vistas intermedias + vista final para escalar ante crecimiento de tablas y esquemas variables.",
                 "ETLs de Marketing Analytics: Google Ads + Meta Ads hacia modelo analítico con control incremental y alerting.",
-                "Automatizaciones CRM con SSO + OTP: extracción, limpieza, deduplicación y carga incremental con reporte de ejecución.",
+                "Automatizaciones CRM con SSO + OTP: workflows con Python + n8n/Make; extracción, deduplicación y carga incremental con reporte de ejecución.",
                 "Integraciones operativas (contact center): sincronización de listas outbound y gestión DNC (bloquear/consultar/desbloquear).",
             ]
         )
@@ -277,7 +241,11 @@ def build_cv_es(cfg: CVConfig) -> None:
     story.append(Paragraph("IDIOMAS", s_section))
     story.append(Paragraph("Español (nativo) · Inglés (avanzado) · Portugués (avanzado)", s_body))
 
-    doc.build(story, onFirstPage=lambda c, d: _footer(c, d, cfg), onLaterPages=lambda c, d: _footer(c, d, cfg))
+    # Avoid headers/footers for ATS parsing; keep content in the main body.
+    story.append(Spacer(1, 3 * mm))
+    story.append(Paragraph(f"Actualizado: {cfg.updated_on}", s_meta))
+
+    doc.build(story)
 
 
 def main() -> None:
@@ -285,7 +253,7 @@ def main() -> None:
         output_pdf=Path("output/pdf/CV-Espanol.pdf"),
         updated_on="10 feb 2026",
         name="Jose David Batista Zerpa",
-        headline="Analytics Engineer · Power BI (DAX/M) · BigQuery · Python",
+        headline="Analytics Engineer | Power BI (DAX/M) | BigQuery | Python",
         email="jbatistazerpa@gmail.com",
         website="www.davidzerpa.com",
         linkedin="linkedin.com/in/davidzerpago",

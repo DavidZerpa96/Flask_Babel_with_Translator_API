@@ -47,19 +47,24 @@
                     <div class="row gx-3 justify-content-center">
                         <div class="col-lg-11 col-xl-9 col-xxl-9">
 
-                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
+                            <div class="card project-card overflow-hidden shadow rounded-4 border-0 mb-5">
+                                <div class="row g-0 h-100">
+                                    <div class="col-md-4 h-100">
                                         <a href="{{ url_for('PortfolioHotel') }}">
-                                            <img src="{{ url_for('static', filename='images/GCHotelsProject.webp') }}" class="img-fluid rounded-start card-img-cover" alt="Buscador de hoteles" />
+                                            <img src="{{ url_for('static', filename='images/GCHotelsProject.webp') }}" class="img-fluid rounded-start card-img-cover h-100" alt="Buscador de hoteles" />
                                         </a>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="p-5">
-                                            <h2 class="fw-bolder text-center text-primary mb-3">Buscador de hoteles (Gran Canaria)</h2>
-                                            <p class="text-muted mb-4">
-                                                Sistema de extracción y análisis para monitorizar ofertas de alojamiento y visualizar tendencias en Power BI.
+                                            <h2 class="fw-bolder text-primary mb-2 text-center text-md-start">Buscador de hoteles (Gran Canaria)</h2>
+                                            <p class="text-muted mb-3 text-center text-md-start">
+                                                Extracción y análisis de ofertas de alojamiento para detectar oportunidades y visualizar tendencias.
                                             </p>
+                                            <div class="project-story mb-3">
+                                                <div><span class="story-label">Contexto:</span> comparar precios y disponibilidad sin revisar portales manualmente.</div>
+                                                <div><span class="story-label">Qué construí:</span> scraping + limpieza + dataset listo para Power BI.</div>
+                                                <div><span class="story-label">Resultado:</span> panel de tendencias para explorar por zona/fecha y tomar decisiones con datos.</div>
+                                            </div>
                                             <div class="d-flex flex-wrap gap-2 mb-4">
                                                 <span class="badge bg-light text-dark border">Python</span>
                                                 <span class="badge bg-light text-dark border">Web scraping</span>
@@ -73,19 +78,24 @@
                                 </div>
                             </div>
 
-                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
+                            <div class="card project-card overflow-hidden shadow rounded-4 border-0 mb-5">
+                                <div class="row g-0 h-100">
+                                    <div class="col-md-4 h-100">
                                         <a href="{{ url_for('PortfolioSport') }}">
-                                            <img src="{{ url_for('static', filename='images/SportCollections.webp') }}" class="img-fluid rounded-start card-img-cover" alt="Sport Collection" />
+                                            <img src="{{ url_for('static', filename='images/SportCollections.webp') }}" class="img-fluid rounded-start card-img-cover h-100" alt="Sport Collection" />
                                         </a>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="p-5">
-                                            <h2 class="fw-bolder text-center text-primary mb-3">Sport Collection (Power BI)</h2>
-                                            <p class="text-muted mb-4">
-                                                Dashboard de análisis financiero y logístico para una tienda de deportes (dataset ficticio) con foco en decisiones operativas.
+                                            <h2 class="fw-bolder text-primary mb-2 text-center text-md-start">Sport Collection (Power BI)</h2>
+                                            <p class="text-muted mb-3 text-center text-md-start">
+                                                Dashboard financiero y logístico para una tienda (dataset ficticio) con foco en decisiones operativas.
                                             </p>
+                                            <div class="project-story mb-3">
+                                                <div><span class="story-label">Contexto:</span> entender margen, rotación y performance logística sin perderse en tablas.</div>
+                                                <div><span class="story-label">Qué construí:</span> modelado + medidas DAX y KPIs accionables.</div>
+                                                <div><span class="story-label">Resultado:</span> vista clara de rentabilidad y operaciones para priorizar acciones.</div>
+                                            </div>
                                             <div class="d-flex flex-wrap gap-2 mb-4">
                                                 <span class="badge bg-light text-dark border">Power BI</span>
                                                 <span class="badge bg-light text-dark border">DAX</span>
@@ -99,19 +109,24 @@
                                 </div>
                             </div>
 
-                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
+                            <div class="card project-card overflow-hidden shadow rounded-4 border-0 mb-5">
+                                <div class="row g-0 h-100">
+                                    <div class="col-md-4 h-100">
                                         <a href="{{ url_for('PortfolioGarbel') }}">
-                                            <img src="{{ url_for('static', filename='images/GarbelFrontPage.webp') }}" class="img-fluid rounded-start card-img-cover" alt="RRHH Garbel" />
+                                            <img src="{{ url_for('static', filename='images/GarbelFrontPage.webp') }}" class="img-fluid rounded-start card-img-cover h-100" alt="RRHH Garbel" />
                                         </a>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="p-5">
-                                            <h2 class="fw-bolder text-center text-primary mb-3">RRHH (Power BI)</h2>
-                                            <p class="text-muted mb-4">
-                                                Dashboard para rotación y desempeño del área de RRHH, con insights accionables para retención.
+                                            <h2 class="fw-bolder text-primary mb-2 text-center text-md-start">RRHH (Power BI)</h2>
+                                            <p class="text-muted mb-3 text-center text-md-start">
+                                                Dashboard de rotación y desempeño con foco en retención y toma de decisiones.
                                             </p>
+                                            <div class="project-story mb-3">
+                                                <div><span class="story-label">Contexto:</span> señales tardías sobre rotación y desempeño.</div>
+                                                <div><span class="story-label">Qué construí:</span> modelo + visualización con segmentaciones y KPIs clave.</div>
+                                                <div><span class="story-label">Resultado:</span> insights accionables para priorizar acciones de retención.</div>
+                                            </div>
                                             <div class="d-flex flex-wrap gap-2 mb-4">
                                                 <span class="badge bg-light text-dark border">Power BI</span>
                                                 <span class="badge bg-light text-dark border">Visualización</span>
@@ -124,19 +139,24 @@
                                 </div>
                             </div>
 
-                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
+                            <div class="card project-card overflow-hidden shadow rounded-4 border-0 mb-5">
+                                <div class="row g-0 h-100">
+                                    <div class="col-md-4 h-100">
                                         <a href="{{ url_for('FinancialDashboard') }}">
-                                            <img src="{{ url_for('static', filename='images/FinancialFrontPage.webp') }}" class="img-fluid rounded-start card-img-cover" alt="Dashboard financiero" />
+                                            <img src="{{ url_for('static', filename='images/FinancialFrontPage.webp') }}" class="img-fluid rounded-start card-img-cover h-100" alt="Dashboard financiero" />
                                         </a>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="p-5">
-                                            <h2 class="fw-bolder text-center text-primary mb-3">Dashboard financiero (Power BI)</h2>
-                                            <p class="text-muted mb-4">
+                                            <h2 class="fw-bolder text-primary mb-2 text-center text-md-start">Dashboard financiero (Power BI)</h2>
+                                            <p class="text-muted mb-3 text-center text-md-start">
                                                 Análisis de ingresos, costos y márgenes. Ejemplo de modelado y medidas DAX avanzadas.
                                             </p>
+                                            <div class="project-story mb-3">
+                                                <div><span class="story-label">Contexto:</span> entender qué impulsa margen e ingresos sin cálculos manuales.</div>
+                                                <div><span class="story-label">Qué construí:</span> modelo + medidas para descomponer ingresos, costos y rentabilidad.</div>
+                                                <div><span class="story-label">Resultado:</span> exploración rápida por producto/segmento para identificar palancas.</div>
+                                            </div>
                                             <div class="d-flex flex-wrap gap-2 mb-4">
                                                 <span class="badge bg-light text-dark border">Power BI</span>
                                                 <span class="badge bg-light text-dark border">DAX</span>

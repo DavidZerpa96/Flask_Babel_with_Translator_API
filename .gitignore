@@ -16,3 +16,6 @@ venv/
 .idea/
 .vscode/
 
+# Build artifacts / temporary renders
+output/
+tmp/

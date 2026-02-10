@@ -11969,6 +11969,11 @@ html, body {
   margin-bottom: 0.35rem;
 }
 
+/* Resume page */
+.resume-role ul li {
+  margin-bottom: 0.55rem;
+}
+
 .card img {
   max-width: 100%;
   height: auto;

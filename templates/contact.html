@@ -2,11 +2,24 @@
 <html lang="es">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="{{ _('Ponte en contacto conmigo. Hablemos sobre cómo puedo ayudarte con tus proyectos y objetivos.') }}">
-        <meta name="keywords" content="Contacto, David Zerpa, pymes, Canarias, inteligencia de negocios, análisis de datos, Power BI, automatización, consultoría de datos">
-        <meta name="author" content="David Zerpa" />
-        <title>{{ _('Contacto') }}</title>
+	        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	        <meta name="description" content="{{ _('Ponte en contacto conmigo. Hablemos sobre cómo puedo ayudarte con tus proyectos y objetivos.') }}">
+	        <meta name="keywords" content="Contacto, David Zerpa, pymes, Canarias, inteligencia de negocios, análisis de datos, Power BI, automatización, consultoría de datos">
+	        <meta name="author" content="David Zerpa" />
+	        <meta name="robots" content="index,follow" />
+	        <link rel="canonical" href="{{ request.base_url }}" />
+	        <meta property="og:locale" content="es_ES" />
+	        <meta property="og:type" content="website" />
+	        <meta property="og:site_name" content="David Zerpa" />
+	        <meta property="og:title" content="Contacto | David Zerpa" />
+	        <meta property="og:description" content="{{ _('Hablemos sobre pipelines de datos, BI y automatización (Python, n8n, Make).') }}" />
+	        <meta property="og:url" content="{{ request.base_url }}" />
+	        <meta property="og:image" content="{{ url_for('static', filename='images/ProfileNew.webp', _external=True) }}" />
+	        <meta name="twitter:card" content="summary_large_image" />
+	        <meta name="twitter:title" content="Contacto | David Zerpa" />
+	        <meta name="twitter:description" content="{{ _('Cuéntame el contexto y te propongo un enfoque técnico y plan de implementación.') }}" />
+	        <meta name="twitter:image" content="{{ url_for('static', filename='images/ProfileNew.webp', _external=True) }}" />
+	        <title>Contacto | David Zerpa</title>
         <!-- Google Fonts personalizados -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,10 +28,19 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- CSS principal del tema -->
         <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
-        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-        <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/Icon.ico') }}" />
-    </head>
+	        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+	        <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+	        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/Icon.ico') }}" />
+	        <script type="application/ld+json">
+	        {
+	          "@context": "https://schema.org",
+	          "@type": "ContactPage",
+	          "name": "Contacto | David Zerpa",
+	          "url": "{{ request.base_url }}",
+	          "inLanguage": "es-ES"
+	        }
+	        </script>
+	    </head>
     <body class="d-flex flex-column">
         <main class="flex-shrink-0">
             <!-- Barra de navegación -->

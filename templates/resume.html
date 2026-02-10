@@ -2,11 +2,24 @@
 <html lang="es">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="{{ _('Currículum de David Zerpa (Analytics Engineer). Experiencia en data pipelines, BigQuery, MySQL, Power BI y automatización con Python.') }}">
-        <meta name="keywords" content="Currículum, David Zerpa, Analytics Engineer, data engineering, Power BI, BigQuery, Python, SQL, automatización, ETL, DAX, MySQL">
-        <meta name="author" content="David Zerpa" />
-        <title>{{ _('Currículum') }}</title>
+	        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	        <meta name="description" content="{{ _('Currículum de David Zerpa (Analytics Engineer). Experiencia en data pipelines, BigQuery, MySQL, Power BI y automatización con Python.') }}">
+	        <meta name="keywords" content="Currículum, David Zerpa, Analytics Engineer, data engineering, Power BI, BigQuery, Python, SQL, automatización, ETL, DAX, MySQL">
+	        <meta name="author" content="David Zerpa" />
+	        <meta name="robots" content="index,follow" />
+	        <link rel="canonical" href="{{ request.base_url }}" />
+	        <meta property="og:locale" content="es_ES" />
+	        <meta property="og:type" content="website" />
+	        <meta property="og:site_name" content="David Zerpa" />
+	        <meta property="og:title" content="Currículum | David Zerpa" />
+	        <meta property="og:description" content="{{ _('Currículum (PDF) y experiencia: pipelines, BigQuery, Power BI (DAX/M) y automatización (Python, n8n, Make).') }}" />
+	        <meta property="og:url" content="{{ request.base_url }}" />
+	        <meta property="og:image" content="{{ url_for('static', filename='images/ProfileNew.webp', _external=True) }}" />
+	        <meta name="twitter:card" content="summary_large_image" />
+	        <meta name="twitter:title" content="Currículum | David Zerpa" />
+	        <meta name="twitter:description" content="{{ _('Descarga el CV y revisa experiencia, certificaciones y stack técnico.') }}" />
+	        <meta name="twitter:image" content="{{ url_for('static', filename='images/ProfileNew.webp', _external=True) }}" />
+	        <title>Currículum | David Zerpa</title>
         <!-- Custom Google font-->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,9 +28,18 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
-        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/Icon.ico') }}" />
-    </head>
+	        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+	        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/Icon.ico') }}" />
+	        <script type="application/ld+json">
+	        {
+	          "@context": "https://schema.org",
+	          "@type": "WebPage",
+	          "name": "Currículum | David Zerpa",
+	          "url": "{{ request.base_url }}",
+	          "inLanguage": "es-ES"
+	        }
+	        </script>
+	    </head>
     <body class="d-flex flex-column h-100 bg-light ">
         <main class="flex-shrink-0 ">
             <!-- Navigation-->
@@ -72,18 +94,20 @@
                                         </div>
                                         <!-- Descripción y logros -->
                                         <div class="col-lg-8">
-                                            <div>
-                                                <b>{{ _('Diseño y opero data pipelines, construyo modelos semánticos en Power BI (DAX/M) e implemento automatizaciones operativas para convertir procesos manuales en sistemas escalables y confiables.') }}</b>
-                                                <br><br>
-                                                {{ _('Resultados (Becall, 2025-2026):') }}
-                                                <br><br>
+                                            <div class="resume-role">
+                                                <div class="mb-3">
+                                                    <b>{{ _('Rol:') }}</b>
+                                                    {{ _('diseño y operación de data pipelines, construcción de modelos semánticos en Power BI (DAX/M) y automatizaciones operativas para convertir procesos manuales en sistemas escalables y confiables.') }}
+                                                </div>
+
+                                                <div class="mb-2 fw-bolder text-primary">{{ _('Impacto (2025-2026)') }}</div>
+                                                <ul class="mb-0">
+                                                    <li><strong>{{ _('Automatización CRM (Python + n8n/Make, SSO + OTP):') }}</strong> {{ _('fiabilidad ~30% -> ~90-95% y ~1000-2000 registros/día en operación.') }}</li>
+                                                    <li><strong>{{ _('Power BI (modelo multi-fuente):') }}</strong> {{ _('diseño + evolución del modelo, gobernanza y performance (hasta 347 medidas y 89 relaciones) sin degradar producción.') }}</li>
+                                                    <li><strong>{{ _('BigQuery (data products):') }}</strong> {{ _('capa de vistas + automatización para consolidar cientos de tablas heterogéneas y escalar consumo analítico.') }}</li>
+                                                    <li><strong>{{ _('Operación + compliance (contact center, DNC):') }}</strong> {{ _('integraciones y utilidades con trazabilidad para reducir fricción operativa y riesgo.') }}</li>
+                                                </ul>
                                             </div>
-                                            <ul class="story-bullets">
-                                                <li><strong>{{ _('Dolor') }}:</strong> {{ _('procesos CRM manuales e inestables.') }} <strong>{{ _('Solución') }}:</strong> {{ _('automatización con Python + n8n/Make y autenticación SSO + OTP, reintentos, validaciones y alertas.') }} <strong>{{ _('Impacto') }}:</strong> {{ _('fiabilidad ~30% a ~90-95% y ~1000-2000 registros/día.') }}</li>
-                                                <li><strong>{{ _('Dolor') }}:</strong> {{ _('reporting lento y difícil de mantener con múltiples fuentes.') }} <strong>{{ _('Solución') }}:</strong> {{ _('diseño y evolución del modelo semántico (DAX/M) + optimización.') }} <strong>{{ _('Impacto') }}:</strong> {{ _('hasta 347 medidas y 89 relaciones sin degradar producción.') }}</li>
-                                                <li><strong>{{ _('Dolor') }}:</strong> {{ _('datos fragmentados en cientos de tablas.') }} <strong>{{ _('Solución') }}:</strong> {{ _('data products en BigQuery con capa de vistas y automatización.') }} <strong>{{ _('Impacto') }}:</strong> {{ _('consumo analítico escalable para BI y operación.') }}</li>
-                                                <li><strong>{{ _('Dolor') }}:</strong> {{ _('fricción operativa en contact center y riesgo DNC.') }} <strong>{{ _('Solución') }}:</strong> {{ _('integraciones operativas + utilidades DNC con trazabilidad.') }} <strong>{{ _('Impacto') }}:</strong> {{ _('menos trabajo manual y mejor compliance.') }}</li>
-                                            </ul>
                                         </div>
                                     </div>
                                 </div>

@@ -1,20 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Proyectos personales de David Zerpa: Power BI, automatización y analítica aplicada." />
-        <meta name="keywords" content="Proyectos, portfolio, Power BI, Python, SQL, automatización, dashboards" />
-        <meta name="author" content="David Zerpa" />
-        <title>Proyectos | David Zerpa</title>
+	    <head>
+	        <meta charset="utf-8" />
+	        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	        <meta name="description" content="Proyectos personales de David Zerpa: Power BI, automatización y analítica aplicada." />
+	        <meta name="keywords" content="Proyectos, portfolio, Power BI, Python, SQL, automatización, dashboards" />
+	        <meta name="author" content="David Zerpa" />
+	        <meta name="robots" content="index,follow" />
+	        <link rel="canonical" href="{{ request.base_url }}" />
+	        <meta property="og:locale" content="es_ES" />
+	        <meta property="og:type" content="website" />
+	        <meta property="og:site_name" content="David Zerpa" />
+	        <meta property="og:title" content="Proyectos | David Zerpa" />
+	        <meta property="og:description" content="Proyectos personales: Power BI, automatización con Python y analítica aplicada." />
+	        <meta property="og:url" content="{{ request.base_url }}" />
+	        <meta property="og:image" content="{{ url_for('static', filename='images/ProfileNew.webp', _external=True) }}" />
+	        <meta name="twitter:card" content="summary_large_image" />
+	        <meta name="twitter:title" content="Proyectos | David Zerpa" />
+	        <meta name="twitter:description" content="Proyectos personales con enfoque en datos, automatización y BI." />
+	        <meta name="twitter:image" content="{{ url_for('static', filename='images/ProfileNew.webp', _external=True) }}" />
+	        <title>Proyectos | David Zerpa</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
         <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
-        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/Icon.ico') }}" />
-    </head>
+	        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+	        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/Icon.ico') }}" />
+	        <script type="application/ld+json">
+	        {
+	          "@context": "https://schema.org",
+	          "@type": "CollectionPage",
+	          "name": "Proyectos | David Zerpa",
+	          "url": "{{ request.base_url }}",
+	          "inLanguage": "es-ES"
+	        }
+	        </script>
+	    </head>
     <body class="d-flex flex-column h-100 bg-light">
         <main class="flex-shrink-0">
             <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">

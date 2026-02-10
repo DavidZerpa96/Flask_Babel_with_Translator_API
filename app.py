@@ -50,6 +50,10 @@ def sitemap():
         url_for("services", _external=True),
         url_for("resume", _external=True),
         url_for("contact", _external=True),
+        url_for("PortfolioHotel", _external=True),
+        url_for("PortfolioSport", _external=True),
+        url_for("PortfolioGarbel", _external=True),
+        url_for("FinancialDashboard", _external=True),
     ]
     xml = ["<?xml version=\"1.0\" encoding=\"UTF-8\"?>", "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">"]
     for p in pages:

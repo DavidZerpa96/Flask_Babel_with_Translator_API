@@ -11746,17 +11746,7 @@ html {
   }
 }
 
-/* información añadida por mi */
-
-@media (max-width: 768px) {
-  .d-flex {
-      flex-direction: column; /* Cambia la disposición a vertical en móviles */
-  }
-  .img-fluid{
-    width: 100%;
-    height: 400px;
-  }
-}
+/* Custom additions (site-specific) */
 
 .icon-hover:hover {
   color: rgba(30, 150, 243, 0.6); /* Color primario con 50% de transparencia */
@@ -11864,10 +11854,100 @@ html, body {
   }
 }
 
+/* Hero kicker */
+.hero-pill {
+  padding: 0.55rem 0.9rem;
+  font-size: clamp(0.9rem, 2.4vw, 1.05rem);
+  line-height: 1.1;
+  white-space: normal;
+}
+
+.hero-pill-primary {
+  background: -webkit-linear-gradient(90deg, hsla(200, 100%, 30%, 1) 0%, hsla(187, 24%, 63%, 1) 81%);
+  color: #fff;
+  border: 0;
+}
+
+.hero-kicker-sub {
+  font-size: 1.05rem;
+}
+
+@media (max-width: 576px) {
+  .hero-kicker-sub {
+    font-size: 0.95rem;
+  }
+}
+
+/* Storytelling blocks */
+.story-label {
+  font-weight: 800;
+  color: #0b3d91;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 992px) {
+  .story-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.story-item {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 1rem;
+  padding: 1.25rem 1.25rem;
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.05);
+}
+
+.story-title {
+  margin-bottom: 0.6rem;
+}
+
+.story-lines > div {
+  margin-bottom: 0.35rem;
+}
+
+.story-mini {
+  color: #6c757d;
+  font-size: 0.98rem;
+}
+
+.story-mini > div {
+  margin-bottom: 0.35rem;
+}
+
+.story-bullets li {
+  margin-bottom: 0.75rem;
+}
+
 .card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.card-img-cover {
   width: 100%;
-  height: 100%; /* Safari maneja mejor las alturas automáticas */
-  object-fit: auto;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-img-contain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 767.98px) {
+  .card-img-cover,
+  .card-img-contain {
+    height: auto;
+    max-height: 240px;
+  }
 }
 
 .nav-item-selected{
@@ -11883,11 +11963,6 @@ html, body {
 
 .service-card img {
   max-width: 100%;
-  object-fit: contain;
-  display: flex; /* Activa Flexbox */
-  align-items: center; /* Centra verticalmente */
-  justify-content: center; /* Centra horizontalmente */
-  height: 100%; /* Asegura que el contenedor ocupe toda la altura */
 }
 
 .card-small {
@@ -11905,14 +11980,5 @@ html, body {
   .card-small{
     max-width: 100%;
     margin: 0 auto;
-  }
-  p{
-    text-align: center;
-  }
-  h2{
-    text-align: center;
-  }
-  h1{
-    text-align: center;
   }
 }

@@ -19,3 +19,6 @@ venv/
 # Build artifacts / temporary renders
 output/
 tmp/
+
+# Local run logs / dev server
+.run/

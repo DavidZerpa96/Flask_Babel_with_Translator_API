@@ -45,8 +45,16 @@
                     <div class="row gx-5 align-items-center py-3 pt-5">
                         <div class="col-xxl-6 mb-2">
                             <div class="text-center text-xxl-start row gx-5 pb-5 me-1 ms-1">
-                                <div class="badge bg-gradient-primary-to-secondary text-white mb-4 text-wrap text-center px-3 py-3 ">
-                                    <div class="fst-italic" style="font-size: 30px;">{{ _('Analytics Engineer | Power BI · BigQuery · Python') }}</div>
+                                <div class="hero-kicker mb-4">
+                                    <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-xxl-start">
+                                        <span class="badge rounded-pill hero-pill hero-pill-primary">{{ _('Analytics Engineer') }}</span>
+                                        <span class="badge rounded-pill bg-light text-dark border hero-pill">Power BI (DAX/M)</span>
+                                        <span class="badge rounded-pill bg-light text-dark border hero-pill">BigQuery</span>
+                                        <span class="badge rounded-pill bg-light text-dark border hero-pill">Python</span>
+                                    </div>
+                                    <div class="hero-kicker-sub text-muted fw-semibold mt-2 text-center text-xxl-start">
+                                        {{ _('Pipelines de datos · Modelado semántico · Automatización') }}
+                                    </div>
                                 </div>
                                 <h1 class="display-3 fw-bolder mb-3"><span class="text-gradient d-inline">{{ _('De datos dispersos a decisiones confiables.') }}</span></h1>
                                 <p class="lead fw-bold fs-3">{{ _('Diseño data pipelines, modelos semánticos y automatizaciones para escalar tu analítica con calidad y rendimiento.') }}</p>
@@ -238,15 +246,33 @@
                 <div class="container px-5">
                     <div class="row gx-5 justify-content-center">
                         <div class="col-xxl-9">
-                            <h3 class="text-center fw-bolder mb-4"><span class="text-gradient d-inline">{{ _('Resultados recientes (2025-2026)') }}</span></h3>
-                            <ul class="text-muted fs-5">
-                                <li>{{ _('Optimización de modelos Power BI de alta complejidad (hasta 347 medidas y 89 relaciones), mejorando mantenibilidad y rendimiento.') }}</li>
-                                <li>{{ _('Automatización de procesos CRM con autenticación empresarial (SSO + OTP), elevando la fiabilidad de ejecución de ~30% a ~90-95%.') }}</li>
-                                <li>{{ _('Construcción de data products en BigQuery para consolidar cientos de tablas heterogéneas y escalar el consumo analítico.') }}</li>
-                                <li>{{ _('ETLs incrementales para Google Ads y Meta Ads hacia modelo analítico, con upserts y controles de consistencia.') }}</li>
-                                <li>{{ _('Integraciones con plataformas de contact center para sincronización operativa y gestión DNC (cumplimiento).') }}</li>
-                                <li>{{ _('Scripts de data quality y reconciliación entre fuentes para reducir tiempos de troubleshooting e incidencias.') }}</li>
-                            </ul>
+                            <h3 class="text-center fw-bolder mb-4"><span class="text-gradient d-inline">{{ _('Resultados recientes (Becall, 2025-2026)') }}</span></h3>
+                            <div class="story-grid">
+                                <div class="story-item">
+                                    <div class="story-title text-primary fw-bolder">{{ _('CRM: automatización con SSO + OTP') }}</div>
+                                    <div class="story-lines text-muted">
+                                        <div><span class="story-label">{{ _('Dolor') }}:</span> {{ _('ejecuciones manuales e inestables (~30%).') }}</div>
+                                        <div><span class="story-label">{{ _('Solución') }}:</span> {{ _('pipeline resiliente (reintentos, validaciones, alertas) con autenticación empresarial.') }}</div>
+                                        <div><span class="story-label">{{ _('Impacto') }}:</span> {{ _('~90-95% de fiabilidad y ~1000-2000 registros/día en operación.') }}</div>
+                                    </div>
+                                </div>
+                                <div class="story-item">
+                                    <div class="story-title text-primary fw-bolder">{{ _('Power BI: modelo semántico complejo') }}</div>
+                                    <div class="story-lines text-muted">
+                                        <div><span class="story-label">{{ _('Dolor') }}:</span> {{ _('reporting lento y difícil de mantener con múltiples fuentes y lógica de negocio.') }}</div>
+                                        <div><span class="story-label">{{ _('Solución') }}:</span> {{ _('diseño y evolución del modelo (DAX/M), gobernanza de medidas y performance.') }}</div>
+                                        <div><span class="story-label">{{ _('Impacto') }}:</span> {{ _('hasta 347 medidas y 89 relaciones sin degradar producción.') }}</div>
+                                    </div>
+                                </div>
+                                <div class="story-item">
+                                    <div class="story-title text-primary fw-bolder">{{ _('BigQuery: data products (leads)') }}</div>
+                                    <div class="story-lines text-muted">
+                                        <div><span class="story-label">{{ _('Dolor') }}:</span> {{ _('datos fragmentados en cientos de tablas heterogéneas.') }}</div>
+                                        <div><span class="story-label">{{ _('Solución') }}:</span> {{ _('capa de vistas + automatización para escalar incorporación de nuevas tablas.') }}</div>
+                                        <div><span class="story-label">{{ _('Impacto') }}:</span> {{ _('consumo analítico escalable para BI y operación.') }}</div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center mt-4">
                                 <a class="btn btn-primary btn-lg px-5 py-3 fs-6 fw-bolder" href="{{ url_for('work') }}">{{ _('Ver casos (experiencia)') }}</a>
                                 <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="{{ url_for('contact') }}">{{ _('Hablemos') }}</a>

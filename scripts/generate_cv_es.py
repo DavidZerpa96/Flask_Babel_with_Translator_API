@@ -75,8 +75,8 @@ def build_cv_es(cfg: CVConfig) -> None:
         "Headline",
         parent=base,
         fontName="Helvetica-Bold",
-        fontSize=11.5,
-        leading=14,
+        fontSize=11.25,
+        leading=13.5,
         textColor=colors.black,
         spaceAfter=4 * mm,
     )
@@ -179,31 +179,38 @@ def build_cv_es(cfg: CVConfig) -> None:
     )
     story.append(Spacer(1, 2 * mm))
 
-    # Highlights (numbers first)
-    story.append(Paragraph("IMPACTO (2025-2026)", s_section))
-    story.append(
-        bullets(
-            [
-                "<b>Power BI:</b> optimización de modelos de alta complejidad (hasta <b>347 medidas</b> y <b>89 relaciones</b>).",
-                "<b>Automatización CRM:</b> fiabilidad mejorada de ~30% a ~90-95% con SSO + OTP; ~1000-2000 registros/día.",
-                "<b>BigQuery:</b> data products para consolidar cientos de tablas heterogéneas y escalar consumo analítico.",
-                "<b>ETL Marketing:</b> pipelines incrementales (Google Ads + Meta Ads) con upserts, retries/backoff y alertas.",
-                "<b>Operación:</b> integraciones con plataformas de contact center, sincronización de listas y utilidades DNC (compliance).",
-            ]
-        )
-    )
-
     # Experience
     story.append(Paragraph("EXPERIENCIA", s_section))
 
     story.append(Paragraph("Becall | Analytics Engineer", s_job))
-    story.append(Paragraph("España | 2025 - Presente", s_meta))
+    story.append(Paragraph("España | Ene 2025 - Presente", s_meta))
+    story.append(
+        Paragraph(
+            "Diseño y opero data pipelines, construyo modelos semánticos en Power BI (DAX/M) e implemento automatizaciones operativas "
+            "para convertir procesos manuales en sistemas escalables y confiables.",
+            s_body,
+        )
+    )
+    story.append(Spacer(1, 1.5 * mm))
+    story.append(Paragraph("<b>Resultados (Becall, 2025-2026):</b>", s_body))
     story.append(
         bullets(
             [
-                "Diseño y operación de pipelines end-to-end (ingesta, transformación, carga, observabilidad).",
-                "Modelado semántico y performance en Power BI (DAX/M), gobernanza de medidas y mantenibilidad.",
-                "Automatización de procesos operativos (APIs/portales/CRM) con reintentos por etapa, validaciones y alertas.",
+                "<b>CRM:</b> de ejecuciones inestables (~30%) a ~90-95% con SSO + OTP, validaciones, reintentos y alertas; ~1000-2000 registros/día.",
+                "<b>Power BI:</b> diseño y evolución de un modelo semántico complejo (múltiples fuentes + lógica de negocio), hasta <b>347 medidas</b> y <b>89 relaciones</b>.",
+                "<b>BigQuery:</b> data products con capa de vistas para consolidar cientos de tablas heterogéneas y escalar consumo analítico.",
+                "<b>Operación:</b> integraciones con plataformas de contact center y utilidades DNC (compliance) para reducir fricción operativa.",
+            ]
+        )
+    )
+    story.append(Spacer(1, 1.5 * mm))
+    story.append(Paragraph("<b>Responsabilidades:</b>", s_body))
+    story.append(
+        bullets(
+            [
+                "Pipelines end-to-end (ingesta, transformación, carga) con observabilidad y operación estable.",
+                "Automatización de procesos (APIs/portales/CRM) con idempotencia, logging y reconciliación.",
+                "Colaboración con negocio para traducir reglas a modelos analíticos mantenibles.",
             ]
         )
     )
@@ -278,7 +285,7 @@ def main() -> None:
         output_pdf=Path("output/pdf/CV-Espanol.pdf"),
         updated_on="10 feb 2026",
         name="Jose David Batista Zerpa",
-        headline="Analytics Engineer | Power BI (DAX/M) | BigQuery | Python | Data Pipelines & Automation",
+        headline="Analytics Engineer · Power BI (DAX/M) · BigQuery · Python",
         email="jbatistazerpa@gmail.com",
         website="www.davidzerpa.com",
         linkedin="linkedin.com/in/davidzerpago",
@@ -291,4 +298,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

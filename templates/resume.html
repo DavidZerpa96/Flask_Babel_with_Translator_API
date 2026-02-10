@@ -64,7 +64,7 @@
                                         <!-- Información de la tarjeta -->
                                         <div class="col text-center text-lg-start mb-4 mb-lg-0">
                                                 <div class="bg-light p-4 rounded-4 text-center">
-                                                    <div class="text-primary fw-bolder mb-2">2025 - {{ _('Presente') }}</div>
+                                                <div class="text-primary fw-bolder mb-2">Ene 2025 - {{ _('Presente') }}</div>
                                                 <div class="fs-5 fw-bolder">{{ _('Analytics Engineer') }}</div>
                                                 <div class="small text-muted">Becall</div>
                                                 <div class="small text-muted">{{ _('España') }}</div>
@@ -73,17 +73,16 @@
                                         <!-- Descripción y logros -->
                                         <div class="col-lg-8">
                                             <div>
-                                                <b>{{ _('Diseño y opero data pipelines, modelos semánticos en Power BI y automatizaciones operativas para convertir procesos manuales en sistemas escalables y confiables.') }}</b>
+                                                <b>{{ _('Diseño y opero data pipelines, construyo modelos semánticos en Power BI (DAX/M) e implemento automatizaciones operativas para convertir procesos manuales en sistemas escalables y confiables.') }}</b>
                                                 <br><br>
-                                                {{ _('Logros destacados:') }}
+                                                {{ _('Resultados (Becall, 2025-2026):') }}
                                                 <br><br>
                                             </div>
-                                            <ul>
-                                                <li>{{ _('Optimización de modelos Power BI complejos (hasta 347 medidas y 89 relaciones), mejorando rendimiento y gobernanza.') }}</li>
-                                                <li>{{ _('Construcción de data products en BigQuery para consolidar leads desde cientos de tablas y escalar el consumo analítico.') }}</li>
-                                                <li>{{ _('ETLs incrementales para Google Ads y Meta Ads hacia MySQL, con upserts, reintentos y alertas.') }}</li>
-                                                <li>{{ _('Automatización de procesos CRM con autenticación SSO + OTP, elevando la fiabilidad de ~30% a ~90-95% y procesando ~1000-2000 registros/día.') }}</li>
-                                                <li>{{ _('Integraciones con plataformas de contact center (sincronización de listas y utilidades DNC) para reducir fricción operativa y riesgo de compliance.') }}</li>
+                                            <ul class="story-bullets">
+                                                <li><strong>{{ _('Dolor') }}:</strong> {{ _('procesos CRM manuales e inestables.') }} <strong>{{ _('Solución') }}:</strong> {{ _('automatización con SSO + OTP, reintentos, validaciones y alertas.') }} <strong>{{ _('Impacto') }}:</strong> {{ _('fiabilidad ~30% a ~90-95% y ~1000-2000 registros/día.') }}</li>
+                                                <li><strong>{{ _('Dolor') }}:</strong> {{ _('reporting lento y difícil de mantener con múltiples fuentes.') }} <strong>{{ _('Solución') }}:</strong> {{ _('diseño y evolución del modelo semántico (DAX/M) + optimización.') }} <strong>{{ _('Impacto') }}:</strong> {{ _('hasta 347 medidas y 89 relaciones sin degradar producción.') }}</li>
+                                                <li><strong>{{ _('Dolor') }}:</strong> {{ _('datos fragmentados en cientos de tablas.') }} <strong>{{ _('Solución') }}:</strong> {{ _('data products en BigQuery con capa de vistas y automatización.') }} <strong>{{ _('Impacto') }}:</strong> {{ _('consumo analítico escalable para BI y operación.') }}</li>
+                                                <li><strong>{{ _('Dolor') }}:</strong> {{ _('fricción operativa en contact center y riesgo DNC.') }} <strong>{{ _('Solución') }}:</strong> {{ _('integraciones operativas + utilidades DNC con trazabilidad.') }} <strong>{{ _('Impacto') }}:</strong> {{ _('menos trabajo manual y mejor compliance.') }}</li>
                                             </ul>
                                         </div>
                                     </div>

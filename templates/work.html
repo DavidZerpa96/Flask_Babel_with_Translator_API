@@ -46,12 +46,12 @@
                         <div class="col-12 col-lg-6">
                             <div class="card shadow border-0 rounded-4 h-100">
                                 <div class="card-body p-5">
-                                    <h3 class="fw-bolder text-primary mb-3">Modelado semántico + performance (Power BI)</h3>
+                                    <h3 class="fw-bolder text-primary mb-3">Diseño + optimización del modelo semántico (Power BI)</h3>
                                     <p class="text-muted mb-3">
                                         Diseño y evolución de un modelo semántico complejo (múltiples fuentes, lógica de negocio y automatizaciones) para escalar reporting sin degradar producción.
                                     </p>
                                     <div class="story-mini mb-4">
-                                        <div><span class="story-label">Dolor:</span> reporting lento, frágil y difícil de mantener.</div>
+                                        <div><span class="story-label">Dolor:</span> reportes lentos y KPIs inconsistentes entre áreas; cada cambio implicaba riesgo en producción.</div>
                                         <div><span class="story-label">Solución:</span> modelado (DAX/M), gobernanza de medidas, refactors y optimización de patrones.</div>
                                         <div><span class="story-label">Impacto:</span> hasta <strong>347 medidas</strong> y <strong>89 relaciones</strong> con mejor rendimiento y mantenibilidad.</div>
                                     </div>
@@ -67,12 +67,12 @@
                         <div class="col-12 col-lg-6">
                             <div class="card shadow border-0 rounded-4 h-100">
                                 <div class="card-body p-5">
-                                    <h3 class="fw-bolder text-primary mb-3">Data products en BigQuery (consolidación de leads)</h3>
+                                    <h3 class="fw-bolder text-primary mb-3">Diseño + data products en BigQuery (leads)</h3>
                                     <p class="text-muted mb-3">
                                         Diseño de capa de vistas para unificar cientos de tablas heterogéneas y habilitar consumo escalable por BI y operación.
                                     </p>
                                     <div class="story-mini mb-4">
-                                        <div><span class="story-label">Dolor:</span> datos fragmentados, esquemas variables y mantenimiento manual.</div>
+                                        <div><span class="story-label">Dolor:</span> discrepancias de leads por fuente/campaña, duplicados y alto coste de mantenimiento por esquemas variables.</div>
                                         <div><span class="story-label">Solución:</span> vistas intermedias + vista final y automatización para incorporar nuevas tablas.</div>
                                         <div><span class="story-label">Impacto:</span> consumo escalable y consistente sin hardcodeo por tabla.</div>
                                     </div>
@@ -88,12 +88,12 @@
                         <div class="col-12 col-lg-6">
                             <div class="card shadow border-0 rounded-4 h-100">
                                 <div class="card-body p-5">
-                                    <h3 class="fw-bolder text-primary mb-3">ETLs incrementales (Google Ads + Meta Ads)</h3>
+                                    <h3 class="fw-bolder text-primary mb-3">Diseño + operación de ETLs incrementales (Google Ads + Meta Ads)</h3>
                                     <p class="text-muted mb-3">
                                         ETLs robustos hacia modelo analítico con incrementalidad, upserts e idempotencia para reporting y optimización de inversión.
                                     </p>
                                     <div class="story-mini mb-4">
-                                        <div><span class="story-label">Dolor:</span> cargas frágiles y datos inconsistentes entre canales.</div>
+                                        <div><span class="story-label">Dolor:</span> datos de inversión con gaps/latencia y definiciones distintas por canal, dificultando atribución y optimización.</div>
                                         <div><span class="story-label">Solución:</span> incrementalidad + upserts, idempotencia, retry/backoff, logging y alertas.</div>
                                         <div><span class="story-label">Impacto:</span> operación estable y comparativas multi-canal confiables.</div>
                                     </div>
@@ -109,12 +109,12 @@
                         <div class="col-12 col-lg-6">
                             <div class="card shadow border-0 rounded-4 h-100">
                                 <div class="card-body p-5">
-                                    <h3 class="fw-bolder text-primary mb-3">Automatización CRM con SSO + OTP</h3>
+                                    <h3 class="fw-bolder text-primary mb-3">Diseño + automatización CRM con SSO + OTP</h3>
                                     <p class="text-muted mb-3">
                                         Pipeline end-to-end: autenticación, extracción, validación, limpieza y upsert. Enfoque en resiliencia operativa.
                                     </p>
                                     <div class="story-mini mb-4">
-                                        <div><span class="story-label">Dolor:</span> ejecuciones manuales y fallos recurrentes.</div>
+                                        <div><span class="story-label">Dolor:</span> ejecución manual y fallos recurrentes (dependencia operativa, retrabajo y datos desactualizados).</div>
                                         <div><span class="story-label">Solución:</span> automatización con Python + n8n/Make por etapas (validaciones, reintentos y alertas).</div>
                                         <div><span class="story-label">Impacto:</span> fiabilidad ~30% a ~90-95% y ~1000-2000 registros/día.</div>
                                     </div>
@@ -132,12 +132,12 @@
                         <div class="col-12">
                             <div class="card shadow border-0 rounded-4">
                                 <div class="card-body p-5">
-                                    <h3 class="fw-bolder text-primary mb-3">Integraciones operativas (Contact Center) + DNC</h3>
+                                    <h3 class="fw-bolder text-primary mb-3">Diseño + integraciones operativas (Contact Center) + DNC</h3>
                                     <p class="text-muted mb-3">
                                         Integración entre warehouse y plataformas operativas para sincronizar listas, automatizar reportes y estandarizar gestión DNC (compliance).
                                     </p>
                                     <div class="story-mini mb-4">
-                                        <div><span class="story-label">Dolor:</span> fricción operativa y riesgo de incumplimiento (DNC).</div>
+                                        <div><span class="story-label">Dolor:</span> listas desalineadas entre sistemas y riesgo de incumplimiento (DNC) con impacto operativo y reputacional.</div>
                                         <div><span class="story-label">Solución:</span> jobs programados, utilidades CLI y trazabilidad end-to-end.</div>
                                         <div><span class="story-label">Impacto:</span> menos trabajo manual, mejor control de calidad y compliance.</div>
                                     </div>
